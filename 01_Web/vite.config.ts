@@ -28,6 +28,8 @@ export default defineConfig(({ mode }) => {
       cesium({ rebuildCesium: true }),
     ],
     server: {
+      // Tailnet hostnames used by `tailscale serve` (reverse proxy to 127.0.0.1:5173).
+      allowedHosts: ['.tail87d2.ts.net', 'mac-mini-m4'],
       watch: {
         ignored: [
           '**/public/media/user/**',

@@ -1,0 +1,93 @@
+name: Weekly upstream sync
+
+# Checks Aisland-SJL/StarMap once a week, merges upstream/main into this fork,
+# and publishes a Release for the merged version so the in-app update checker
+# (VITE_GITHUB_REPOSITORY=koven2049/StarMap) can surface "update available"
+# with the latest version number and release time.
+
+on:
+  schedule:
+    - cron: '0 1 * * 1' # every Monday 01:00 UTC = 09:00 Beijing time
+  workflow_dispatch: # allow manual runs
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: sync-upstream
+  cancel-in-progress: false
+
+env:
+  UPSTREAM_REPO: Aisland-SJL/StarMap
+  DEFAULT_BRANCH: main
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout fork
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ env.DEFAULT_BRANCH }}
+          fetch-depth: 0
+
+      - name: Merge upstream main
+        id: merge
+        run: |
+          git config user.name "starmap-sync-bot"
+          git config user.email "actions@github.com"
+          git remote add upstream "https://github.com/${UPSTREAM_REPO}.git"
+          git fetch upstream "$DEFAULT_BRANCH"
+          BEFORE=$(git rev-parse HEAD)
+          git merge "upstream/$DEFAULT_BRANCH" --no-edit
+          AFTER=$(git rev-parse HEAD)
+          if [ "$BEFORE" = "$AFTER" ]; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "Already up to date with ${UPSTREAM_REPO}."
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+            git push origin "$DEFAULT_BRANCH"
+            echo "Merged and pushed $(git log --oneline -1)."
+          fi
+
+      - name: Publish release for the current version
+        # Runs even when nothing changed, so a missing baseline release gets
+        # created on the first run. Skips silently when the tag already exists.
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          VERSION=$(node -p "require('./01_Web/package.json').version")
+          TAG="v${VERSION}"
+          if gh release view "$TAG" -R "$GITHUB_REPOSITORY" > /dev/null 2>&1; then
+            echo "Release ${TAG} already exists; nothing to publish."
+            exit 0
+          fi
+          NOTES_FILE="docs/releases/v${VERSION}.md"
+          echo "Publishing release ${TAG} from $(git rev-parse --short HEAD)."
+          if [ -f "$NOTES_FILE" ]; then
+            gh release create "$TAG" -R "$GITHUB_REPOSITORY" \
+              --target "$DEFAULT_BRANCH" \
+              --title "StarMap ${TAG} (synced from upstream)" \
+              --notes-file "$NOTES_FILE"
+          else
+            gh release create "$TAG" -R "$GITHUB_REPOSITORY" \
+              --target "$DEFAULT_BRANCH" \
+              --title "StarMap ${TAG} (synced from upstream)" \
+              --notes "Automated sync from ${UPSTREAM_REPO}, merged at $(date -u '+%Y-%m-%d %H:%M UTC')."
+          fi
+
+      - name: Open issue when sync fails
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          EXISTING=$(gh issue list -R "$GITHUB_REPOSITORY" --state open \
+            --search "Weekly upstream sync failed in:title" --json number --jq 'length')
+          if [ "$EXISTING" != "0" ]; then
+            echo "An open sync-failure issue already exists; skipping."
+            exit 0
+          fi
+          gh issue create -R "$GITHUB_REPOSITORY" \
+            --title "Weekly upstream sync failed" \
+            --body "The scheduled merge from ${UPSTREAM_REPO} into ${DEFAULT_BRANCH} failed, most likely due to merge conflicts. Resolve manually: open the [workflow run](${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}), inspect the conflicting files, then merge locally and push. This issue is filed automatically once per failure window."

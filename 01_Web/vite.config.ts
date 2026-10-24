@@ -28,8 +28,9 @@ export default defineConfig(({ mode }) => {
       cesium({ rebuildCesium: true }),
     ],
     server: {
-      // Tailnet hostnames used by `tailscale serve` (reverse proxy to 127.0.0.1:5173).
-      allowedHosts: ['.tail87d2.ts.net', 'mac-mini-m4'],
+      // Tailnet hostnames used by `tailscale serve` (reverse proxy to 127.0.0.1:5173),
+      // plus the cloudflared public domain (proxy also originates from 127.0.0.1).
+      allowedHosts: ['.tail87d2.ts.net', 'mac-mini-m4', '.koven2049.xyz'],
       watch: {
         ignored: [
           '**/public/media/user/**',

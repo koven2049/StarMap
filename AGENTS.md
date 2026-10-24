@@ -97,3 +97,45 @@ npm run dev:personal
 - Web workspace: [`01_Web/README.md`](01_Web/README.md)
 - Media workflow: [`02_Assets/MediaInbox/README.md`](02_Assets/MediaInbox/README.md)
 - Privacy boundary: [`03_Reference/TravelAtlas_open_source_privacy_boundary.md`](03_Reference/TravelAtlas_open_source_privacy_boundary.md)
+
+## 本地多终端开发约定（fork 侧追加；与上文冲突时以本节为准）
+
+> 本节为多终端 / 多 agent 并行开发的补充纪律（2026-10-24 从个人 harness 合并）。
+> 上文上游规则的"Do not push without explicit approval"由本节「合并即推」取代。
+
+### 开工先拉最新
+
+任何要动文件的任务开工前按序执行：`git fetch --prune` → `git status --short`
+（主目录若有他人未提交改动：不动、不顺手提交，先问清归属）→ `git pull origin main`。
+本仓库 main 每周一由 GitHub Actions（`.github/workflows/sync-upstream.yml`）自动
+合并上游，**先拉再改是硬要求**。开工顺带巡检：`git branch --merged origin/main`
+清已合并残留分支，`git worktree list` 清已合并分支挂着的空壳 worktree（`-d` /
+remove 天然不会误删未合并内容）；未合并或含未提交改动的一律不动，报告用户。
+
+### 动代码必走 worktree
+
+- 任务触碰任何代码 / 测试文件 → **整任务**进 worktree（顺带的文档更新一起做）；
+  只改文档、配置、纯资源或一处 typo 可直接在 main 上做（照常 commit + 推送）。
+  不以「当前只有我一个终端」为由豁免——无法知道别的会话 / 机器是否在途。
+- 位置与命名：worktree 建在**仓库同级** `.worktree/` 目录下，子目录
+  `StarMap-wt-<简述>`（目录名必须以仓库标识开头）；分支 `feat/<简述>` /
+  `fix/<简述>` / `task/<简述>`，简述 kebab-case ≤20 字符。
+- worktree 复用主目录依赖，不重复 `npm ci`：
+  `ln -s <主目录>/01_Web/node_modules 01_Web/node_modules`。
+- **dev 服务器与 `06_private/` 私有层归主目录所有**：worktree 内不要跑
+  `dev:personal`（会落到 worktree 自己的空私有层）；验证用 `npm run lint` +
+  `npm run build:public`，确需起服务时以
+  `STARMAP_PRIVATE_ROOT=<主目录>/06_private` 在独立端口临时运行。
+- 切分支前工作区必须干净（commit 或 stash），绝不带着未提交改动 checkout。
+- 收尾：worktree 内 commit → 主目录 `git merge` 回 main → `git push origin main`
+  （合并即推）→ `git worktree remove` → `git branch -d`；`-d` 失败说明未真合并，
+  停下排查，禁止 `-D` 硬删。硬判定：`branch --merged origin/main` 除 main 无输出、
+  `worktree list` 只剩主目录、主分支与远程推平，全部满足才算完成。
+
+### 提交与推送纪律
+
+- Conventional Commits，subject ≤50 字符；diff 超过 10 行必须写正文说明 why。
+- push 前危险文件扫描：`git diff origin/main..HEAD --name-only` 中不得出现
+  `06_private/`、`.env*`、`*token*`、`credentials*`、私人媒体或 `06_private`
+  的任何内容；`.gitignore` 只是第二道保险。
+- 临时文件（`/tmp` 清单、调试截图、长输出）任务收尾即删。

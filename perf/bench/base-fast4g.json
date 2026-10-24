@@ -1,0 +1,485 @@
+{
+ "started": "2026-10-24 11:21:33",
+ "finished": "2026-10-24 11:27:17",
+ "config": {
+  "runs": 10,
+  "profile": "fast4g",
+  "cpu": 1,
+  "width": 1440,
+  "height": 900,
+  "ready": "!!document.querySelector('canvas') && !!document.querySelector('[aria-label=\"版本更新\"]')",
+  "type_check": null
+ },
+ "paired": false,
+ "results": {
+  "A": {
+   "url": "http://127.0.0.1:5173/",
+   "summary": {
+    "n": 10,
+    "n_ok": 10,
+    "ready": {
+     "p50": 31642.9,
+     "p75": 31652.5,
+     "p95": 31769.3
+    },
+    "lcp": {
+     "p50": 31842.0,
+     "p75": 31853.0,
+     "p95": 32065.2
+    },
+    "fcp": {
+     "p50": 31842.0,
+     "p75": 31853.0,
+     "p95": 32065.2
+    },
+    "dcl": {
+     "p50": 31451.9,
+     "p75": 31483.0,
+     "p95": 31606.5
+    },
+    "load": {
+     "p50": 31454.5,
+     "p75": 31485.7,
+     "p95": 31608.7
+    },
+    "longtask": {
+     "p50": 1722.0,
+     "p75": 1916.0,
+     "p95": 2202.2
+    },
+    "requests": {
+     "p50": 62.0,
+     "p75": 62.0,
+     "p95": 65.2
+    },
+    "bytes_total": {
+     "p50": 16625066.0,
+     "p75": 16625066.0,
+     "p95": 16835700.4
+    }
+   },
+   "runs": [
+    {
+     "url": "http://127.0.0.1:5173/",
+     "ok": true,
+     "ready": 31654.400000572205,
+     "lcp": 32052,
+     "longtask": 2407,
+     "fcp": 32052,
+     "dcl": 31416.60000038147,
+     "load": 31423.900000572205,
+     "requests": 67,
+     "bytes_total": 16789028,
+     "bytes_by_type": {
+      "link": 31010,
+      "script": 16256900,
+      "xmlhttprequest": 365381,
+      "img": 6328,
+      "fetch": 0,
+      "other": 128431
+     },
+     "slowest": [
+      {
+       "name": "http://127.0.0.1:5173/node_modules/.vite/deps/remark-gfm.js?v=4e4262df",
+       "responseEnd": 33872
+      },
+      {
+       "name": "https://dev.virtualearth.net/REST/v1/Imagery/Metadata/Aerial?incl=ImageryProviders&key=AmXdbd8UeUJtaRSn7yVwyXgQlBBUqliLb",
+       "responseEnd": 33779
+      },
+      {
+       "name": "https://api.cesium.com/v1/assets/2/endpoint?access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJub25jZSI6Ii1mNTFfTWdiWU",
+       "responseEnd": 33013
+      },
+      {
+       "name": "http://127.0.0.1:5173/cesium/Workers/createGeometry.js",
+       "responseEnd": 32790
+      },
+      {
+       "name": "http://127.0.0.1:5173/cesium/Workers/createGeometry.js",
+       "responseEnd": 32790
+      }
+     ]
+    },
+    {
+     "url": "http://127.0.0.1:5173/",
+     "ok": true,
+     "ready": 31599.300000190735,
+     "lcp": 31808,
+     "longtask": 1924,
+     "fcp": 31808,
+     "dcl": 31422.89999961853,
+     "load": 31425.599999427795,
+     "requests": 62,
+     "bytes_total": 16625066,
+     "bytes_by_type": {
+      "link": 31010,
+      "script": 16127154,
+      "xmlhttprequest": 365381,
+      "img": 6328,
+      "fetch": 0,
+      "other": 94215
+     },
+     "slowest": [
+      {
+       "name": "http://127.0.0.1:5173/cesium/Assets/approximateTerrainHeights.json",
+       "responseEnd": 33129
+      },
+      {
+       "name": "https://dev.virtualearth.net/REST/v1/Imagery/Metadata/Aerial?incl=ImageryProviders&key=AmXdbd8UeUJtaRSn7yVwyXgQlBBUqliLb",
+       "responseEnd": 32935
+      },
+      {
+       "name": "http://127.0.0.1:5173/cesium/Workers/createVerticesFromHeightmap.js",
+       "responseEnd": 32279
+      },
+      {
+       "name": "https://api.cesium.com/v1/assets/2/endpoint?access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJub25jZSI6Ii1mNTFfTWdiWU",
+       "responseEnd": 32271
+      },
+      {
+       "name": "https://api.github.com/repos/koven2049/StarMap/releases/latest",
+       "responseEnd": 31974
+      }
+     ]
+    },
+    {
+     "url": "http://127.0.0.1:5173/",
+     "ok": true,
+     "ready": 31648.60000038147,
+     "lcp": 31840,
+     "longtask": 1779,
+     "fcp": 31840,
+     "dcl": 31453.20000076294,
+     "load": 31456,
+     "requests": 62,
+     "bytes_total": 16625066,
+     "bytes_by_type": {
+      "link": 31010,
+      "script": 16127154,
+      "xmlhttprequest": 365381,
+      "img": 6328,
+      "fetch": 0,
+      "other": 94215
+     },
+     "slowest": [
+      {
+       "name": "http://127.0.0.1:5173/cesium/Assets/approximateTerrainHeights.json",
+       "responseEnd": 33202
+      },
+      {
+       "name": "https://dev.virtualearth.net/REST/v1/Imagery/Metadata/Aerial?incl=ImageryProviders&key=AmXdbd8UeUJtaRSn7yVwyXgQlBBUqliLb",
+       "responseEnd": 32777
+      },
+      {
+       "name": "http://127.0.0.1:5173/cesium/Workers/createVerticesFromHeightmap.js",
+       "responseEnd": 32315
+      },
+      {
+       "name": "https://api.cesium.com/v1/assets/2/endpoint?access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJub25jZSI6Ii1mNTFfTWdiWU",
+       "responseEnd": 32249
+      },
+      {
+       "name": "https://api.github.com/repos/koven2049/StarMap/releases/latest",
+       "responseEnd": 32165
+      }
+     ]
+    },
+    {
+     "url": "http://127.0.0.1:5173/",
+     "ok": true,
+     "ready": 31631.699999809265,
+     "lcp": 31840,
+     "longtask": 1952,
+     "fcp": 31840,
+     "dcl": 31450.60000038147,
+     "load": 31453,
+     "requests": 62,
+     "bytes_total": 16625066,
+     "bytes_by_type": {
+      "link": 31010,
+      "script": 16127154,
+      "xmlhttprequest": 365381,
+      "img": 6328,
+      "fetch": 0,
+      "other": 94215
+     },
+     "slowest": [
+      {
+       "name": "https://dev.virtualearth.net/REST/v1/Imagery/Metadata/Aerial?incl=ImageryProviders&key=AmXdbd8UeUJtaRSn7yVwyXgQlBBUqliLb",
+       "responseEnd": 33327
+      },
+      {
+       "name": "http://127.0.0.1:5173/cesium/Assets/approximateTerrainHeights.json",
+       "responseEnd": 33123
+      },
+      {
+       "name": "https://api.cesium.com/v1/assets/2/endpoint?access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJub25jZSI6Ii1mNTFfTWdiWU",
+       "responseEnd": 32889
+      },
+      {
+       "name": "http://127.0.0.1:5173/cesium/Workers/createVerticesFromHeightmap.js",
+       "responseEnd": 32314
+      },
+      {
+       "name": "https://flagcdn.com/w80/fo.png",
+       "responseEnd": 32305
+      }
+     ]
+    },
+    {
+     "url": "http://127.0.0.1:5173/",
+     "ok": true,
+     "ready": 31633.599999427795,
+     "lcp": 31836,
+     "longtask": 1892,
+     "fcp": 31836,
+     "dcl": 31432.199999809265,
+     "load": 31435.199999809265,
+     "requests": 62,
+     "bytes_total": 16625066,
+     "bytes_by_type": {
+      "link": 31010,
+      "script": 16127154,
+      "xmlhttprequest": 365381,
+      "img": 6328,
+      "fetch": 0,
+      "other": 94215
+     },
+     "slowest": [
+      {
+       "name": "https://dev.virtualearth.net/REST/v1/Imagery/Metadata/Aerial?incl=ImageryProviders&key=AmXdbd8UeUJtaRSn7yVwyXgQlBBUqliLb",
+       "responseEnd": 33591
+      },
+      {
+       "name": "http://127.0.0.1:5173/cesium/Assets/approximateTerrainHeights.json",
+       "responseEnd": 33055
+      },
+      {
+       "name": "https://api.cesium.com/v1/assets/2/endpoint?access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJub25jZSI6Ii1mNTFfTWdiWU",
+       "responseEnd": 33052
+      },
+      {
+       "name": "http://127.0.0.1:5173/cesium/Workers/createVerticesFromHeightmap.js",
+       "responseEnd": 32302
+      },
+      {
+       "name": "https://api.github.com/repos/koven2049/StarMap/releases/latest",
+       "responseEnd": 32165
+      }
+     ]
+    },
+    {
+     "url": "http://127.0.0.1:5173/",
+     "ok": true,
+     "ready": 31637.10000038147,
+     "lcp": 31844,
+     "longtask": 1256,
+     "fcp": 31844,
+     "dcl": 31503.60000038147,
+     "load": 31505.20000076294,
+     "requests": 63,
+     "bytes_total": 16873887,
+     "bytes_by_type": {
+      "script": 16256900,
+      "link": 31010,
+      "xmlhttprequest": 484456,
+      "img": 6328,
+      "fetch": 0,
+      "other": 94215
+     },
+     "slowest": [
+      {
+       "name": "http://127.0.0.1:5173/node_modules/.vite/deps/remark-gfm.js?v=4e4262df",
+       "responseEnd": 33781
+      },
+      {
+       "name": "http://127.0.0.1:5173/cesium/Assets/Textures/SkyBox/tycho2t3_80_mx.jpg",
+       "responseEnd": 33745
+      },
+      {
+       "name": "http://127.0.0.1:5173/cesium/Assets/approximateTerrainHeights.json",
+       "responseEnd": 33725
+      },
+      {
+       "name": "https://api.cesium.com/v1/assets/2/endpoint?access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJub25jZSI6Ii1mNTFfTWdiWU",
+       "responseEnd": 33623
+      },
+      {
+       "name": "http://127.0.0.1:5173/cesium/Workers/createVerticesFromHeightmap.js",
+       "responseEnd": 32278
+      }
+     ]
+    },
+    {
+     "url": "http://127.0.0.1:5173/",
+     "ok": true,
+     "ready": 31863.29999923706,
+     "lcp": 32076,
+     "longtask": 1639,
+     "fcp": 32076,
+     "dcl": 31690.699999809265,
+     "load": 31693.39999961853,
+     "requests": 62,
+     "bytes_total": 16625066,
+     "bytes_by_type": {
+      "link": 31010,
+      "script": 16127154,
+      "xmlhttprequest": 365381,
+      "img": 6328,
+      "fetch": 0,
+      "other": 94215
+     },
+     "slowest": [
+      {
+       "name": "https://dev.virtualearth.net/REST/v1/Imagery/Metadata/Aerial?incl=ImageryProviders&key=AmXdbd8UeUJtaRSn7yVwyXgQlBBUqliLb",
+       "responseEnd": 33441
+      },
+      {
+       "name": "http://127.0.0.1:5173/cesium/Assets/approximateTerrainHeights.json",
+       "responseEnd": 33296
+      },
+      {
+       "name": "https://api.cesium.com/v1/assets/2/endpoint?access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJub25jZSI6Ii1mNTFfTWdiWU",
+       "responseEnd": 33090
+      },
+      {
+       "name": "http://127.0.0.1:5173/cesium/Workers/createVerticesFromHeightmap.js",
+       "responseEnd": 32535
+      },
+      {
+       "name": "https://api.github.com/repos/koven2049/StarMap/releases/latest",
+       "responseEnd": 32241
+      }
+     ]
+    },
+    {
+     "url": "http://127.0.0.1:5173/",
+     "ok": true,
+     "ready": 31652.699999809265,
+     "lcp": 31844,
+     "longtask": 1617,
+     "fcp": 31844,
+     "dcl": 31484.10000038147,
+     "load": 31486.89999961853,
+     "requests": 61,
+     "bytes_total": 16625066,
+     "bytes_by_type": {
+      "link": 31010,
+      "script": 16127154,
+      "xmlhttprequest": 365381,
+      "img": 6328,
+      "fetch": 0,
+      "other": 94215
+     },
+     "slowest": [
+      {
+       "name": "http://127.0.0.1:5173/cesium/Assets/approximateTerrainHeights.json",
+       "responseEnd": 33225
+      },
+      {
+       "name": "https://api.cesium.com/v1/assets/2/endpoint?access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJub25jZSI6Ii1mNTFfTWdiWU",
+       "responseEnd": 32692
+      },
+      {
+       "name": "http://127.0.0.1:5173/cesium/Workers/createVerticesFromHeightmap.js",
+       "responseEnd": 32308
+      },
+      {
+       "name": "https://api.github.com/repos/koven2049/StarMap/releases/latest",
+       "responseEnd": 32025
+      },
+      {
+       "name": "http://127.0.0.1:5173/cesium/Assets/IAU2006_XYS/IAU2006_XYS_18.json",
+       "responseEnd": 31966
+      }
+     ]
+    },
+    {
+     "url": "http://127.0.0.1:5173/",
+     "ok": true,
+     "ready": 31652,
+     "lcp": 31856,
+     "longtask": 1658,
+     "fcp": 31856,
+     "dcl": 31479.79999923706,
+     "load": 31482.199999809265,
+     "requests": 62,
+     "bytes_total": 16625066,
+     "bytes_by_type": {
+      "link": 31010,
+      "script": 16127154,
+      "xmlhttprequest": 365381,
+      "img": 6328,
+      "fetch": 0,
+      "other": 94215
+     },
+     "slowest": [
+      {
+       "name": "http://127.0.0.1:5173/cesium/Assets/approximateTerrainHeights.json",
+       "responseEnd": 33312
+      },
+      {
+       "name": "https://dev.virtualearth.net/REST/v1/Imagery/Metadata/Aerial?incl=ImageryProviders&key=AmXdbd8UeUJtaRSn7yVwyXgQlBBUqliLb",
+       "responseEnd": 33259
+      },
+      {
+       "name": "https://api.cesium.com/v1/assets/2/endpoint?access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJub25jZSI6Ii1mNTFfTWdiWU",
+       "responseEnd": 32718
+      },
+      {
+       "name": "https://flagcdn.com/w80/fo.png",
+       "responseEnd": 32418
+      },
+      {
+       "name": "https://flagcdn.com/w80/is.png",
+       "responseEnd": 32418
+      }
+     ]
+    },
+    {
+     "url": "http://127.0.0.1:5173/",
+     "ok": true,
+     "ready": 31611.699999809265,
+     "lcp": 31800,
+     "longtask": 1665,
+     "fcp": 31800,
+     "dcl": 31412.10000038147,
+     "load": 31414.300000190735,
+     "requests": 61,
+     "bytes_total": 16625066,
+     "bytes_by_type": {
+      "link": 31010,
+      "script": 16127154,
+      "xmlhttprequest": 365381,
+      "img": 6328,
+      "fetch": 0,
+      "other": 94215
+     },
+     "slowest": [
+      {
+       "name": "http://127.0.0.1:5173/cesium/Assets/approximateTerrainHeights.json",
+       "responseEnd": 33184
+      },
+      {
+       "name": "https://api.cesium.com/v1/assets/2/endpoint?access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJub25jZSI6Ii1mNTFfTWdiWU",
+       "responseEnd": 32559
+      },
+      {
+       "name": "https://flagcdn.com/w80/is.png",
+       "responseEnd": 32339
+      },
+      {
+       "name": "https://flagcdn.com/w80/fo.png",
+       "responseEnd": 32339
+      },
+      {
+       "name": "http://127.0.0.1:5173/cesium/Workers/createVerticesFromHeightmap.js",
+       "responseEnd": 32270
+      }
+     ]
+    }
+   ]
+  }
+ }
+}

@@ -25,7 +25,7 @@ export default defineConfig(({ mode }) => {
       }),
       react(),
       tailwindcss(),
-      cesium(),
+      cesium({ rebuildCesium: true }),
     ],
     server: {
       watch: {

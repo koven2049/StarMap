@@ -1,0 +1,945 @@
+{
+ "started": "2026-10-24 11:32:43",
+ "finished": "2026-10-24 11:34:42",
+ "config": {
+  "runs": 10,
+  "profile": "fast4g",
+  "cpu": 1,
+  "width": 1440,
+  "height": 900,
+  "ready": "!!document.querySelector('canvas') && !!document.querySelector('[aria-label=\"版本更新\"]')",
+  "type_check": null
+ },
+ "paired": true,
+ "results": {
+  "A": {
+   "url": "http://127.0.0.1:4173/",
+   "summary": {
+    "n": 10,
+    "n_ok": 10,
+    "ready": {
+     "p50": 4189.8,
+     "p75": 4204.6,
+     "p95": 4273.4
+    },
+    "lcp": {
+     "p50": 4368.0,
+     "p75": 4382.0,
+     "p95": 4531.8
+    },
+    "fcp": {
+     "p50": 4368.0,
+     "p75": 4382.0,
+     "p95": 4531.8
+    },
+    "dcl": {
+     "p50": 4073.2,
+     "p75": 4086.3,
+     "p95": 4119.4
+    },
+    "load": {
+     "p50": 4073.7,
+     "p75": 4086.5,
+     "p95": 4119.8
+    },
+    "longtask": {
+     "p50": 1895.5,
+     "p75": 2013.5,
+     "p95": 2217.7
+    },
+    "requests": {
+     "p50": 13.0,
+     "p75": 13.0,
+     "p95": 13.0
+    },
+    "bytes_total": {
+     "p50": 2088846.0,
+     "p75": 2088846.0,
+     "p95": 2088846.0
+    }
+   },
+   "runs": [
+    {
+     "url": "http://127.0.0.1:4173/",
+     "ok": true,
+     "ready": 4306.699999809265,
+     "lcp": 4620,
+     "longtask": 2341,
+     "fcp": 4620,
+     "dcl": 4132.400000572205,
+     "load": 4132.400000572205,
+     "requests": 13,
+     "bytes_total": 2088846,
+     "bytes_by_type": {
+      "link": 38923,
+      "script": 1916110,
+      "xmlhttprequest": 126618,
+      "img": 6328,
+      "fetch": 0
+     },
+     "slowest": [
+      {
+       "name": "https://api.github.com/repos/Aisland-SJL/StarMap/releases/latest",
+       "responseEnd": 5626
+      },
+      {
+       "name": "http://127.0.0.1:4173/cesium/Assets/approximateTerrainHeights.json",
+       "responseEnd": 4660
+      },
+      {
+       "name": "http://127.0.0.1:4173/assets/ReleaseMarkdown-BBWKXReB.js",
+       "responseEnd": 4531
+      },
+      {
+       "name": "http://127.0.0.1:4173/cesium/Assets/IAU2006_XYS/IAU2006_XYS_18.json",
+       "responseEnd": 4523
+      },
+      {
+       "name": "https://flagcdn.com/w80/is.png",
+       "responseEnd": 4515
+      }
+     ]
+    },
+    {
+     "url": "http://127.0.0.1:4173/",
+     "ok": true,
+     "ready": 4171.800000190735,
+     "lcp": 4340,
+     "longtask": 1728,
+     "fcp": 4340,
+     "dcl": 4060.800000190735,
+     "load": 4060.800000190735,
+     "requests": 13,
+     "bytes_total": 2088846,
+     "bytes_by_type": {
+      "link": 38923,
+      "script": 1916110,
+      "xmlhttprequest": 126618,
+      "img": 6328,
+      "fetch": 0
+     },
+     "slowest": [
+      {
+       "name": "https://api.github.com/repos/Aisland-SJL/StarMap/releases/latest",
+       "responseEnd": 5021
+      },
+      {
+       "name": "http://127.0.0.1:4173/cesium/Assets/approximateTerrainHeights.json",
+       "responseEnd": 4523
+      },
+      {
+       "name": "http://127.0.0.1:4173/assets/ReleaseMarkdown-BBWKXReB.js",
+       "responseEnd": 4398
+      },
+      {
+       "name": "http://127.0.0.1:4173/cesium/Assets/IAU2006_XYS/IAU2006_XYS_18.json",
+       "responseEnd": 4379
+      },
+      {
+       "name": "https://flagcdn.com/w80/is.png",
+       "responseEnd": 4342
+      }
+     ]
+    },
+    {
+     "url": "http://127.0.0.1:4173/",
+     "ok": true,
+     "ready": 4181.400000572205,
+     "lcp": 4384,
+     "longtask": 1867,
+     "fcp": 4384,
+     "dcl": 4065,
+     "load": 4066.1000003814697,
+     "requests": 13,
+     "bytes_total": 2088846,
+     "bytes_by_type": {
+      "link": 38923,
+      "script": 1916110,
+      "xmlhttprequest": 126618,
+      "img": 6328,
+      "fetch": 0
+     },
+     "slowest": [
+      {
+       "name": "https://api.github.com/repos/Aisland-SJL/StarMap/releases/latest",
+       "responseEnd": 4549
+      },
+      {
+       "name": "http://127.0.0.1:4173/cesium/Assets/approximateTerrainHeights.json",
+       "responseEnd": 4533
+      },
+      {
+       "name": "http://127.0.0.1:4173/assets/ReleaseMarkdown-BBWKXReB.js",
+       "responseEnd": 4409
+      },
+      {
+       "name": "http://127.0.0.1:4173/cesium/Assets/IAU2006_XYS/IAU2006_XYS_18.json",
+       "responseEnd": 4390
+      },
+      {
+       "name": "https://flagcdn.com/w80/fo.png",
+       "responseEnd": 4348
+      }
+     ]
+    },
+    {
+     "url": "http://127.0.0.1:4173/",
+     "ok": true,
+     "ready": 4176.800000190735,
+     "lcp": 4360,
+     "longtask": 2027,
+     "fcp": 4360,
+     "dcl": 4063.800000190735,
+     "load": 4063.8999996185303,
+     "requests": 13,
+     "bytes_total": 2088846,
+     "bytes_by_type": {
+      "link": 38923,
+      "script": 1916110,
+      "xmlhttprequest": 126618,
+      "img": 6328,
+      "fetch": 0
+     },
+     "slowest": [
+      {
+       "name": "http://127.0.0.1:4173/cesium/Assets/approximateTerrainHeights.json",
+       "responseEnd": 4537
+      },
+      {
+       "name": "https://api.github.com/repos/Aisland-SJL/StarMap/releases/latest",
+       "responseEnd": 4503
+      },
+      {
+       "name": "http://127.0.0.1:4173/assets/ReleaseMarkdown-BBWKXReB.js",
+       "responseEnd": 4405
+      },
+      {
+       "name": "https://flagcdn.com/w80/fo.png",
+       "responseEnd": 4391
+      },
+      {
+       "name": "https://flagcdn.com/w80/is.png",
+       "responseEnd": 4390
+      }
+     ]
+    },
+    {
+     "url": "http://127.0.0.1:4173/",
+     "ok": true,
+     "ready": 4198.099999427795,
+     "lcp": 4356,
+     "longtask": 1860,
+     "fcp": 4356,
+     "dcl": 4080.2999992370605,
+     "load": 4080.2999992370605,
+     "requests": 13,
+     "bytes_total": 2088846,
+     "bytes_by_type": {
+      "link": 38923,
+      "script": 1916110,
+      "xmlhttprequest": 126618,
+      "img": 6328,
+      "fetch": 0
+     },
+     "slowest": [
+      {
+       "name": "https://api.github.com/repos/Aisland-SJL/StarMap/releases/latest",
+       "responseEnd": 5365
+      },
+      {
+       "name": "http://127.0.0.1:4173/cesium/Assets/approximateTerrainHeights.json",
+       "responseEnd": 4550
+      },
+      {
+       "name": "http://127.0.0.1:4173/assets/ReleaseMarkdown-BBWKXReB.js",
+       "responseEnd": 4429
+      },
+      {
+       "name": "http://127.0.0.1:4173/cesium/Assets/IAU2006_XYS/IAU2006_XYS_18.json",
+       "responseEnd": 4407
+      },
+      {
+       "name": "https://flagcdn.com/w80/is.png",
+       "responseEnd": 4357
+      }
+     ]
+    },
+    {
+     "url": "http://127.0.0.1:4173/",
+     "ok": true,
+     "ready": 4232.60000038147,
+     "lcp": 4424,
+     "longtask": 2067,
+     "fcp": 4424,
+     "dcl": 4103.60000038147,
+     "load": 4104.39999961853,
+     "requests": 13,
+     "bytes_total": 2088846,
+     "bytes_by_type": {
+      "link": 38923,
+      "script": 1916110,
+      "xmlhttprequest": 126618,
+      "img": 6328,
+      "fetch": 0
+     },
+     "slowest": [
+      {
+       "name": "https://api.github.com/repos/Aisland-SJL/StarMap/releases/latest",
+       "responseEnd": 4767
+      },
+      {
+       "name": "http://127.0.0.1:4173/cesium/Assets/approximateTerrainHeights.json",
+       "responseEnd": 4594
+      },
+      {
+       "name": "http://127.0.0.1:4173/assets/ReleaseMarkdown-BBWKXReB.js",
+       "responseEnd": 4470
+      },
+      {
+       "name": "http://127.0.0.1:4173/cesium/Assets/IAU2006_XYS/IAU2006_XYS_18.json",
+       "responseEnd": 4438
+      },
+      {
+       "name": "https://flagcdn.com/w80/fo.png",
+       "responseEnd": 4419
+      }
+     ]
+    },
+    {
+     "url": "http://127.0.0.1:4173/",
+     "ok": true,
+     "ready": 4174.300000190735,
+     "lcp": 4372,
+     "longtask": 1973,
+     "fcp": 4372,
+     "dcl": 4066.2000007629395,
+     "load": 4067.1000003814697,
+     "requests": 13,
+     "bytes_total": 2088846,
+     "bytes_by_type": {
+      "link": 38923,
+      "script": 1916110,
+      "xmlhttprequest": 126618,
+      "img": 6328,
+      "fetch": 0
+     },
+     "slowest": [
+      {
+       "name": "https://api.github.com/repos/Aisland-SJL/StarMap/releases/latest",
+       "responseEnd": 4556
+      },
+      {
+       "name": "http://127.0.0.1:4173/cesium/Assets/approximateTerrainHeights.json",
+       "responseEnd": 4533
+      },
+      {
+       "name": "http://127.0.0.1:4173/assets/ReleaseMarkdown-BBWKXReB.js",
+       "responseEnd": 4413
+      },
+      {
+       "name": "http://127.0.0.1:4173/cesium/Assets/IAU2006_XYS/IAU2006_XYS_18.json",
+       "responseEnd": 4376
+      },
+      {
+       "name": "https://flagcdn.com/w80/is.png",
+       "responseEnd": 4341
+      }
+     ]
+    },
+    {
+     "url": "http://127.0.0.1:4173/",
+     "ok": true,
+     "ready": 4181.10000038147,
+     "lcp": 4376,
+     "longtask": 1911,
+     "fcp": 4376,
+     "dcl": 4062.5,
+     "load": 4063.199999809265,
+     "requests": 13,
+     "bytes_total": 2088846,
+     "bytes_by_type": {
+      "link": 38923,
+      "script": 1916110,
+      "xmlhttprequest": 126618,
+      "img": 6328,
+      "fetch": 0
+     },
+     "slowest": [
+      {
+       "name": "http://127.0.0.1:4173/cesium/Assets/approximateTerrainHeights.json",
+       "responseEnd": 4543
+      },
+      {
+       "name": "https://api.github.com/repos/Aisland-SJL/StarMap/releases/latest",
+       "responseEnd": 4517
+      },
+      {
+       "name": "https://flagcdn.com/w80/fo.png",
+       "responseEnd": 4413
+      },
+      {
+       "name": "https://flagcdn.com/w80/is.png",
+       "responseEnd": 4412
+      },
+      {
+       "name": "http://127.0.0.1:4173/assets/ReleaseMarkdown-BBWKXReB.js",
+       "responseEnd": 4405
+      }
+     ]
+    },
+    {
+     "url": "http://127.0.0.1:4173/",
+     "ok": true,
+     "ready": 4204.89999961853,
+     "lcp": 4364,
+     "longtask": 1880,
+     "fcp": 4364,
+     "dcl": 4082.800000190735,
+     "load": 4083.800000190735,
+     "requests": 13,
+     "bytes_total": 2088846,
+     "bytes_by_type": {
+      "link": 38923,
+      "script": 1916110,
+      "xmlhttprequest": 126618,
+      "img": 6328,
+      "fetch": 0
+     },
+     "slowest": [
+      {
+       "name": "https://api.github.com/repos/Aisland-SJL/StarMap/releases/latest",
+       "responseEnd": 4590
+      },
+      {
+       "name": "http://127.0.0.1:4173/cesium/Assets/approximateTerrainHeights.json",
+       "responseEnd": 4565
+      },
+      {
+       "name": "http://127.0.0.1:4173/assets/ReleaseMarkdown-BBWKXReB.js",
+       "responseEnd": 4435
+      },
+      {
+       "name": "http://127.0.0.1:4173/cesium/Assets/IAU2006_XYS/IAU2006_XYS_18.json",
+       "responseEnd": 4411
+      },
+      {
+       "name": "https://flagcdn.com/w80/is.png",
+       "responseEnd": 4373
+      }
+     ]
+    },
+    {
+     "url": "http://127.0.0.1:4173/",
+     "ok": true,
+     "ready": 4203.800000190735,
+     "lcp": 4364,
+     "longtask": 1840,
+     "fcp": 4364,
+     "dcl": 4087.4000005722046,
+     "load": 4087.4000005722046,
+     "requests": 13,
+     "bytes_total": 2088846,
+     "bytes_by_type": {
+      "link": 38923,
+      "script": 1916110,
+      "xmlhttprequest": 126618,
+      "img": 6328,
+      "fetch": 0
+     },
+     "slowest": [
+      {
+       "name": "https://api.github.com/repos/Aisland-SJL/StarMap/releases/latest",
+       "responseEnd": 4703
+      },
+      {
+       "name": "http://127.0.0.1:4173/cesium/Assets/approximateTerrainHeights.json",
+       "responseEnd": 4560
+      },
+      {
+       "name": "https://flagcdn.com/w80/is.png",
+       "responseEnd": 4457
+      },
+      {
+       "name": "https://flagcdn.com/w80/fo.png",
+       "responseEnd": 4448
+      },
+      {
+       "name": "http://127.0.0.1:4173/assets/ReleaseMarkdown-BBWKXReB.js",
+       "responseEnd": 4433
+      }
+     ]
+    }
+   ]
+  },
+  "B": {
+   "url": "http://127.0.0.1:4174/",
+   "summary": {
+    "n": 10,
+    "n_ok": 10,
+    "ready": {
+     "p50": 3093.2,
+     "p75": 3098.3,
+     "p95": 3105.1
+    },
+    "lcp": {
+     "p50": 3260.0,
+     "p75": 3272.0,
+     "p95": 3297.2
+    },
+    "fcp": {
+     "p50": 3260.0,
+     "p75": 3272.0,
+     "p95": 3297.2
+    },
+    "dcl": {
+     "p50": 2981.5,
+     "p75": 2986.5,
+     "p95": 2993.4
+    },
+    "load": {
+     "p50": 2981.5,
+     "p75": 2986.5,
+     "p95": 2993.5
+    },
+    "longtask": {
+     "p50": 1584.0,
+     "p75": 1677.0,
+     "p95": 1789.3
+    },
+    "requests": {
+     "p50": 18.0,
+     "p75": 18.0,
+     "p95": 18.0
+    },
+    "bytes_total": {
+     "p50": 1586379.0,
+     "p75": 1586379.0,
+     "p95": 1586379.0
+    }
+   },
+   "runs": [
+    {
+     "url": "http://127.0.0.1:4174/",
+     "ok": true,
+     "ready": 3085.1000003814697,
+     "lcp": 3260,
+     "longtask": 1703,
+     "fcp": 3260,
+     "dcl": 2971.5,
+     "load": 2971.5,
+     "requests": 18,
+     "bytes_total": 1586379,
+     "bytes_by_type": {
+      "link": 38800,
+      "script": 1393831,
+      "xmlhttprequest": 126618,
+      "img": 6328,
+      "fetch": 0,
+      "other": 19981
+     },
+     "slowest": [
+      {
+       "name": "http://127.0.0.1:4174/cesium/Workers/createGeometry.js",
+       "responseEnd": 3920
+      },
+      {
+       "name": "http://127.0.0.1:4174/cesium/Workers/createGeometry.js",
+       "responseEnd": 3920
+      },
+      {
+       "name": "http://127.0.0.1:4174/cesium/Workers/createGeometry.js",
+       "responseEnd": 3914
+      },
+      {
+       "name": "http://127.0.0.1:4174/cesium/Workers/createGeometry.js",
+       "responseEnd": 3914
+      },
+      {
+       "name": "http://127.0.0.1:4174/cesium/Assets/approximateTerrainHeights.json",
+       "responseEnd": 3478
+      }
+     ]
+    },
+    {
+     "url": "http://127.0.0.1:4174/",
+     "ok": true,
+     "ready": 3104.800000190735,
+     "lcp": 3308,
+     "longtask": 1530,
+     "fcp": 3308,
+     "dcl": 2993.9000005722046,
+     "load": 2994,
+     "requests": 18,
+     "bytes_total": 1586379,
+     "bytes_by_type": {
+      "link": 38800,
+      "script": 1393831,
+      "xmlhttprequest": 126618,
+      "img": 6328,
+      "fetch": 0,
+      "other": 19981
+     },
+     "slowest": [
+      {
+       "name": "https://api.github.com/repos/Aisland-SJL/StarMap/releases/latest",
+       "responseEnd": 4212
+      },
+      {
+       "name": "http://127.0.0.1:4174/cesium/Workers/createGeometry.js",
+       "responseEnd": 3924
+      },
+      {
+       "name": "http://127.0.0.1:4174/cesium/Workers/createGeometry.js",
+       "responseEnd": 3924
+      },
+      {
+       "name": "http://127.0.0.1:4174/cesium/Workers/createGeometry.js",
+       "responseEnd": 3924
+      },
+      {
+       "name": "http://127.0.0.1:4174/cesium/Workers/createGeometry.js",
+       "responseEnd": 3915
+      }
+     ]
+    },
+    {
+     "url": "http://127.0.0.1:4174/",
+     "ok": true,
+     "ready": 3093.199999809265,
+     "lcp": 3260,
+     "longtask": 1458,
+     "fcp": 3260,
+     "dcl": 2985.5,
+     "load": 2985.5,
+     "requests": 18,
+     "bytes_total": 1586379,
+     "bytes_by_type": {
+      "link": 38800,
+      "script": 1393831,
+      "xmlhttprequest": 126618,
+      "img": 6328,
+      "fetch": 0,
+      "other": 19981
+     },
+     "slowest": [
+      {
+       "name": "https://api.github.com/repos/Aisland-SJL/StarMap/releases/latest",
+       "responseEnd": 4042
+      },
+      {
+       "name": "http://127.0.0.1:4174/cesium/Workers/createGeometry.js",
+       "responseEnd": 3921
+      },
+      {
+       "name": "http://127.0.0.1:4174/cesium/Workers/createGeometry.js",
+       "responseEnd": 3921
+      },
+      {
+       "name": "http://127.0.0.1:4174/cesium/Workers/createGeometry.js",
+       "responseEnd": 3921
+      },
+      {
+       "name": "http://127.0.0.1:4174/cesium/Workers/createGeometry.js",
+       "responseEnd": 3913
+      }
+     ]
+    },
+    {
+     "url": "http://127.0.0.1:4174/",
+     "ok": true,
+     "ready": 3105.4000005722046,
+     "lcp": 3272,
+     "longtask": 1702,
+     "fcp": 3272,
+     "dcl": 2992.800000190735,
+     "load": 2992.800000190735,
+     "requests": 18,
+     "bytes_total": 1586379,
+     "bytes_by_type": {
+      "link": 38800,
+      "script": 1393831,
+      "xmlhttprequest": 126618,
+      "img": 6328,
+      "fetch": 0,
+      "other": 19981
+     },
+     "slowest": [
+      {
+       "name": "http://127.0.0.1:4174/cesium/Workers/createGeometry.js",
+       "responseEnd": 3932
+      },
+      {
+       "name": "http://127.0.0.1:4174/cesium/Workers/createGeometry.js",
+       "responseEnd": 3932
+      },
+      {
+       "name": "http://127.0.0.1:4174/cesium/Workers/createGeometry.js",
+       "responseEnd": 3921
+      },
+      {
+       "name": "http://127.0.0.1:4174/cesium/Workers/createGeometry.js",
+       "responseEnd": 3921
+      },
+      {
+       "name": "http://127.0.0.1:4174/cesium/Assets/approximateTerrainHeights.json",
+       "responseEnd": 3504
+      }
+     ]
+    },
+    {
+     "url": "http://127.0.0.1:4174/",
+     "ok": true,
+     "ready": 3081.300000190735,
+     "lcp": 3284,
+     "longtask": 1580,
+     "fcp": 3284,
+     "dcl": 2968,
+     "load": 2968.1000003814697,
+     "requests": 18,
+     "bytes_total": 1586379,
+     "bytes_by_type": {
+      "link": 38800,
+      "script": 1393831,
+      "xmlhttprequest": 126618,
+      "img": 6328,
+      "fetch": 0,
+      "other": 19981
+     },
+     "slowest": [
+      {
+       "name": "http://127.0.0.1:4174/cesium/Workers/createGeometry.js",
+       "responseEnd": 3969
+      },
+      {
+       "name": "http://127.0.0.1:4174/cesium/Workers/createGeometry.js",
+       "responseEnd": 3959
+      },
+      {
+       "name": "http://127.0.0.1:4174/cesium/Workers/createGeometry.js",
+       "responseEnd": 3958
+      },
+      {
+       "name": "http://127.0.0.1:4174/cesium/Workers/createGeometry.js",
+       "responseEnd": 3954
+      },
+      {
+       "name": "http://127.0.0.1:4174/cesium/Assets/approximateTerrainHeights.json",
+       "responseEnd": 3472
+      }
+     ]
+    },
+    {
+     "url": "http://127.0.0.1:4174/",
+     "ok": true,
+     "ready": 3098.5,
+     "lcp": 3252,
+     "longtask": 1534,
+     "fcp": 3252,
+     "dcl": 2986.7999992370605,
+     "load": 2986.8999996185303,
+     "requests": 18,
+     "bytes_total": 1586379,
+     "bytes_by_type": {
+      "link": 38800,
+      "script": 1393831,
+      "xmlhttprequest": 126618,
+      "img": 6328,
+      "fetch": 0,
+      "other": 19981
+     },
+     "slowest": [
+      {
+       "name": "https://flagcdn.com/w80/fo.png",
+       "responseEnd": 4008
+      },
+      {
+       "name": "https://flagcdn.com/w80/is.png",
+       "responseEnd": 4002
+      },
+      {
+       "name": "http://127.0.0.1:4174/cesium/Workers/createGeometry.js",
+       "responseEnd": 3934
+      },
+      {
+       "name": "http://127.0.0.1:4174/cesium/Workers/createGeometry.js",
+       "responseEnd": 3934
+      },
+      {
+       "name": "http://127.0.0.1:4174/cesium/Workers/createGeometry.js",
+       "responseEnd": 3934
+      }
+     ]
+    },
+    {
+     "url": "http://127.0.0.1:4174/",
+     "ok": true,
+     "ready": 3070.199999809265,
+     "lcp": 3232,
+     "longtask": 1588,
+     "fcp": 3232,
+     "dcl": 2960,
+     "load": 2960,
+     "requests": 18,
+     "bytes_total": 1586379,
+     "bytes_by_type": {
+      "link": 38800,
+      "script": 1393831,
+      "xmlhttprequest": 126618,
+      "img": 6328,
+      "fetch": 0,
+      "other": 19981
+     },
+     "slowest": [
+      {
+       "name": "http://127.0.0.1:4174/cesium/Workers/createGeometry.js",
+       "responseEnd": 3909
+      },
+      {
+       "name": "http://127.0.0.1:4174/cesium/Workers/createGeometry.js",
+       "responseEnd": 3909
+      },
+      {
+       "name": "http://127.0.0.1:4174/cesium/Workers/createGeometry.js",
+       "responseEnd": 3898
+      },
+      {
+       "name": "http://127.0.0.1:4174/cesium/Workers/createGeometry.js",
+       "responseEnd": 3898
+      },
+      {
+       "name": "https://flagcdn.com/w80/fo.png",
+       "responseEnd": 3757
+      }
+     ]
+    },
+    {
+     "url": "http://127.0.0.1:4174/",
+     "ok": true,
+     "ready": 3097.699999809265,
+     "lcp": 3252,
+     "longtask": 1436,
+     "fcp": 3252,
+     "dcl": 2979.199999809265,
+     "load": 2979.199999809265,
+     "requests": 18,
+     "bytes_total": 1586379,
+     "bytes_by_type": {
+      "link": 38800,
+      "script": 1393831,
+      "xmlhttprequest": 126618,
+      "img": 6328,
+      "fetch": 0,
+      "other": 19981
+     },
+     "slowest": [
+      {
+       "name": "http://127.0.0.1:4174/cesium/Workers/createGeometry.js",
+       "responseEnd": 3920
+      },
+      {
+       "name": "http://127.0.0.1:4174/cesium/Workers/createGeometry.js",
+       "responseEnd": 3911
+      },
+      {
+       "name": "http://127.0.0.1:4174/cesium/Workers/createGeometry.js",
+       "responseEnd": 3910
+      },
+      {
+       "name": "http://127.0.0.1:4174/cesium/Workers/createGeometry.js",
+       "responseEnd": 3906
+      },
+      {
+       "name": "https://api.github.com/repos/Aisland-SJL/StarMap/releases/latest",
+       "responseEnd": 3622
+      }
+     ]
+    },
+    {
+     "url": "http://127.0.0.1:4174/",
+     "ok": true,
+     "ready": 3093.1000003814697,
+     "lcp": 3248,
+     "longtask": 1602,
+     "fcp": 3248,
+     "dcl": 2983.7000007629395,
+     "load": 2983.800000190735,
+     "requests": 18,
+     "bytes_total": 1586379,
+     "bytes_by_type": {
+      "link": 38800,
+      "script": 1393831,
+      "xmlhttprequest": 126618,
+      "img": 6328,
+      "fetch": 0,
+      "other": 19981
+     },
+     "slowest": [
+      {
+       "name": "http://127.0.0.1:4174/cesium/Workers/createGeometry.js",
+       "responseEnd": 3908
+      },
+      {
+       "name": "http://127.0.0.1:4174/cesium/Workers/createGeometry.js",
+       "responseEnd": 3902
+      },
+      {
+       "name": "http://127.0.0.1:4174/cesium/Workers/createGeometry.js",
+       "responseEnd": 3901
+      },
+      {
+       "name": "http://127.0.0.1:4174/cesium/Workers/createGeometry.js",
+       "responseEnd": 3901
+      },
+      {
+       "name": "http://127.0.0.1:4174/cesium/Assets/approximateTerrainHeights.json",
+       "responseEnd": 3482
+      }
+     ]
+    },
+    {
+     "url": "http://127.0.0.1:4174/",
+     "ok": true,
+     "ready": 3082.199999809265,
+     "lcp": 3272,
+     "longtask": 1860,
+     "fcp": 3272,
+     "dcl": 2974.9000005722046,
+     "load": 2974.9000005722046,
+     "requests": 18,
+     "bytes_total": 1586379,
+     "bytes_by_type": {
+      "link": 38800,
+      "script": 1393831,
+      "xmlhttprequest": 126618,
+      "img": 6328,
+      "fetch": 0,
+      "other": 19981
+     },
+     "slowest": [
+      {
+       "name": "http://127.0.0.1:4174/cesium/Workers/createGeometry.js",
+       "responseEnd": 3905
+      },
+      {
+       "name": "https://api.github.com/repos/Aisland-SJL/StarMap/releases/latest",
+       "responseEnd": 3904
+      },
+      {
+       "name": "http://127.0.0.1:4174/cesium/Workers/createGeometry.js",
+       "responseEnd": 3904
+      },
+      {
+       "name": "http://127.0.0.1:4174/cesium/Workers/createGeometry.js",
+       "responseEnd": 3897
+      },
+      {
+       "name": "http://127.0.0.1:4174/cesium/Workers/createGeometry.js",
+       "responseEnd": 3897
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "ready_p75_reduction": 0.2631
+}

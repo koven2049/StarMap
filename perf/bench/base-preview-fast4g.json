@@ -1,0 +1,475 @@
+{
+ "started": "2026-10-24 11:29:23",
+ "finished": "2026-10-24 11:30:29",
+ "config": {
+  "runs": 10,
+  "profile": "fast4g",
+  "cpu": 1,
+  "width": 1440,
+  "height": 900,
+  "ready": "!!document.querySelector('canvas') && !!document.querySelector('[aria-label=\"版本更新\"]')",
+  "type_check": null
+ },
+ "paired": false,
+ "results": {
+  "A": {
+   "url": "http://127.0.0.1:4173/",
+   "summary": {
+    "n": 10,
+    "n_ok": 10,
+    "ready": {
+     "p50": 4195.7,
+     "p75": 4233.8,
+     "p95": 4295.6
+    },
+    "lcp": {
+     "p50": 4382.0,
+     "p75": 4429.0,
+     "p95": 4540.6
+    },
+    "fcp": {
+     "p50": 4382.0,
+     "p75": 4429.0,
+     "p95": 4540.6
+    },
+    "dcl": {
+     "p50": 4083.7,
+     "p75": 4106.1,
+     "p95": 4158.0
+    },
+    "load": {
+     "p50": 4084.2,
+     "p75": 4106.1,
+     "p95": 4158.0
+    },
+    "longtask": {
+     "p50": 1928.0,
+     "p75": 1972.8,
+     "p95": 2140.4
+    },
+    "requests": {
+     "p50": 13.0,
+     "p75": 13.0,
+     "p95": 13.0
+    },
+    "bytes_total": {
+     "p50": 2088723.0,
+     "p75": 2088723.0,
+     "p95": 2088723.0
+    }
+   },
+   "runs": [
+    {
+     "url": "http://127.0.0.1:4173/",
+     "ok": true,
+     "ready": 4296.299999237061,
+     "lcp": 4600,
+     "longtask": 2189,
+     "fcp": 4600,
+     "dcl": 4112.39999961853,
+     "load": 4112.39999961853,
+     "requests": 13,
+     "bytes_total": 2088723,
+     "bytes_by_type": {
+      "link": 38800,
+      "script": 1916110,
+      "xmlhttprequest": 126618,
+      "img": 6328,
+      "fetch": 0
+     },
+     "slowest": [
+      {
+       "name": "https://api.github.com/repos/Aisland-SJL/StarMap/releases/latest",
+       "responseEnd": 4959
+      },
+      {
+       "name": "http://127.0.0.1:4173/cesium/Assets/approximateTerrainHeights.json",
+       "responseEnd": 4655
+      },
+      {
+       "name": "http://127.0.0.1:4173/assets/ReleaseMarkdown-qm1cGjNa.js",
+       "responseEnd": 4530
+      },
+      {
+       "name": "http://127.0.0.1:4173/cesium/Assets/IAU2006_XYS/IAU2006_XYS_18.json",
+       "responseEnd": 4510
+      },
+      {
+       "name": "https://flagcdn.com/w80/fo.png",
+       "responseEnd": 4460
+      }
+     ]
+    },
+    {
+     "url": "http://127.0.0.1:4173/",
+     "ok": true,
+     "ready": 4187.199999809265,
+     "lcp": 4384,
+     "longtask": 1984,
+     "fcp": 4384,
+     "dcl": 4077.0999994277954,
+     "load": 4077.199999809265,
+     "requests": 13,
+     "bytes_total": 2088723,
+     "bytes_by_type": {
+      "link": 38800,
+      "script": 1916110,
+      "xmlhttprequest": 126618,
+      "img": 6328,
+      "fetch": 0
+     },
+     "slowest": [
+      {
+       "name": "http://127.0.0.1:4173/cesium/Assets/approximateTerrainHeights.json",
+       "responseEnd": 4558
+      },
+      {
+       "name": "https://api.github.com/repos/Aisland-SJL/StarMap/releases/latest",
+       "responseEnd": 4534
+      },
+      {
+       "name": "http://127.0.0.1:4173/assets/ReleaseMarkdown-qm1cGjNa.js",
+       "responseEnd": 4425
+      },
+      {
+       "name": "http://127.0.0.1:4173/cesium/Assets/IAU2006_XYS/IAU2006_XYS_18.json",
+       "responseEnd": 4408
+      },
+      {
+       "name": "https://flagcdn.com/w80/is.png",
+       "responseEnd": 4352
+      }
+     ]
+    },
+    {
+     "url": "http://127.0.0.1:4173/",
+     "ok": true,
+     "ready": 4294.800000190735,
+     "lcp": 4468,
+     "longtask": 1939,
+     "fcp": 4468,
+     "dcl": 4183.300000190735,
+     "load": 4183.300000190735,
+     "requests": 13,
+     "bytes_total": 2088723,
+     "bytes_by_type": {
+      "link": 38800,
+      "script": 1916110,
+      "xmlhttprequest": 126618,
+      "img": 6328,
+      "fetch": 0
+     },
+     "slowest": [
+      {
+       "name": "https://api.github.com/repos/Aisland-SJL/StarMap/releases/latest",
+       "responseEnd": 5566
+      },
+      {
+       "name": "http://127.0.0.1:4173/cesium/Assets/approximateTerrainHeights.json",
+       "responseEnd": 4651
+      },
+      {
+       "name": "https://flagcdn.com/w80/is.png",
+       "responseEnd": 4545
+      },
+      {
+       "name": "https://flagcdn.com/w80/fo.png",
+       "responseEnd": 4535
+      },
+      {
+       "name": "http://127.0.0.1:4173/assets/ReleaseMarkdown-qm1cGjNa.js",
+       "responseEnd": 4521
+      }
+     ]
+    },
+    {
+     "url": "http://127.0.0.1:4173/",
+     "ok": true,
+     "ready": 4187.5,
+     "lcp": 4356,
+     "longtask": 1928,
+     "fcp": 4356,
+     "dcl": 4071.3999996185303,
+     "load": 4071.5,
+     "requests": 13,
+     "bytes_total": 2088723,
+     "bytes_by_type": {
+      "link": 38800,
+      "script": 1916110,
+      "xmlhttprequest": 126618,
+      "img": 6328,
+      "fetch": 0
+     },
+     "slowest": [
+      {
+       "name": "http://127.0.0.1:4173/cesium/Assets/approximateTerrainHeights.json",
+       "responseEnd": 4550
+      },
+      {
+       "name": "https://api.github.com/repos/Aisland-SJL/StarMap/releases/latest",
+       "responseEnd": 4500
+      },
+      {
+       "name": "http://127.0.0.1:4173/assets/ReleaseMarkdown-qm1cGjNa.js",
+       "responseEnd": 4412
+      },
+      {
+       "name": "https://flagcdn.com/w80/is.png",
+       "responseEnd": 4399
+      },
+      {
+       "name": "https://flagcdn.com/w80/fo.png",
+       "responseEnd": 4399
+      }
+     ]
+    },
+    {
+     "url": "http://127.0.0.1:4173/",
+     "ok": true,
+     "ready": 4190,
+     "lcp": 4372,
+     "longtask": 1832,
+     "fcp": 4372,
+     "dcl": 4077.0999994277954,
+     "load": 4077.199999809265,
+     "requests": 13,
+     "bytes_total": 2088723,
+     "bytes_by_type": {
+      "link": 38800,
+      "script": 1916110,
+      "xmlhttprequest": 126618,
+      "img": 6328,
+      "fetch": 0
+     },
+     "slowest": [
+      {
+       "name": "https://api.github.com/repos/Aisland-SJL/StarMap/releases/latest",
+       "responseEnd": 4550
+      },
+      {
+       "name": "http://127.0.0.1:4173/cesium/Assets/approximateTerrainHeights.json",
+       "responseEnd": 4550
+      },
+      {
+       "name": "http://127.0.0.1:4173/assets/ReleaseMarkdown-qm1cGjNa.js",
+       "responseEnd": 4422
+      },
+      {
+       "name": "http://127.0.0.1:4173/cesium/Assets/IAU2006_XYS/IAU2006_XYS_18.json",
+       "responseEnd": 4397
+      },
+      {
+       "name": "https://flagcdn.com/w80/fo.png",
+       "responseEnd": 4356
+      }
+     ]
+    },
+    {
+     "url": "http://127.0.0.1:4173/",
+     "ok": true,
+     "ready": 4215.800000190735,
+     "lcp": 4396,
+     "longtask": 1779,
+     "fcp": 4396,
+     "dcl": 4085.5,
+     "load": 4085.5,
+     "requests": 13,
+     "bytes_total": 2088723,
+     "bytes_by_type": {
+      "link": 38800,
+      "script": 1916110,
+      "xmlhttprequest": 126618,
+      "img": 6328,
+      "fetch": 0
+     },
+     "slowest": [
+      {
+       "name": "https://api.github.com/repos/Aisland-SJL/StarMap/releases/latest",
+       "responseEnd": 5084
+      },
+      {
+       "name": "http://127.0.0.1:4173/cesium/Assets/approximateTerrainHeights.json",
+       "responseEnd": 4571
+      },
+      {
+       "name": "https://flagcdn.com/w80/is.png",
+       "responseEnd": 4479
+      },
+      {
+       "name": "https://flagcdn.com/w80/fo.png",
+       "responseEnd": 4479
+      },
+      {
+       "name": "http://127.0.0.1:4173/assets/ReleaseMarkdown-qm1cGjNa.js",
+       "responseEnd": 4437
+      }
+     ]
+    },
+    {
+     "url": "http://127.0.0.1:4173/",
+     "ok": true,
+     "ready": 4197.199999809265,
+     "lcp": 4380,
+     "longtask": 2081,
+     "fcp": 4380,
+     "dcl": 4087.3999996185303,
+     "load": 4087.3999996185303,
+     "requests": 13,
+     "bytes_total": 2088723,
+     "bytes_by_type": {
+      "link": 38800,
+      "script": 1916110,
+      "xmlhttprequest": 126618,
+      "img": 6328,
+      "fetch": 0
+     },
+     "slowest": [
+      {
+       "name": "http://127.0.0.1:4173/cesium/Assets/approximateTerrainHeights.json",
+       "responseEnd": 4566
+      },
+      {
+       "name": "https://api.github.com/repos/Aisland-SJL/StarMap/releases/latest",
+       "responseEnd": 4528
+      },
+      {
+       "name": "http://127.0.0.1:4173/assets/ReleaseMarkdown-qm1cGjNa.js",
+       "responseEnd": 4427
+      },
+      {
+       "name": "http://127.0.0.1:4173/cesium/Assets/IAU2006_XYS/IAU2006_XYS_18.json",
+       "responseEnd": 4399
+      },
+      {
+       "name": "https://flagcdn.com/w80/is.png",
+       "responseEnd": 4366
+      }
+     ]
+    },
+    {
+     "url": "http://127.0.0.1:4173/",
+     "ok": true,
+     "ready": 4194.200000762939,
+     "lcp": 4356,
+     "longtask": 1891,
+     "fcp": 4356,
+     "dcl": 4081.9000005722046,
+     "load": 4082.9000005722046,
+     "requests": 13,
+     "bytes_total": 2088723,
+     "bytes_by_type": {
+      "link": 38800,
+      "script": 1916110,
+      "xmlhttprequest": 126618,
+      "img": 6328,
+      "fetch": 0
+     },
+     "slowest": [
+      {
+       "name": "https://api.github.com/repos/Aisland-SJL/StarMap/releases/latest",
+       "responseEnd": 4557
+      },
+      {
+       "name": "http://127.0.0.1:4173/cesium/Assets/approximateTerrainHeights.json",
+       "responseEnd": 4545
+      },
+      {
+       "name": "http://127.0.0.1:4173/assets/ReleaseMarkdown-qm1cGjNa.js",
+       "responseEnd": 4427
+      },
+      {
+       "name": "http://127.0.0.1:4173/cesium/Assets/IAU2006_XYS/IAU2006_XYS_18.json",
+       "responseEnd": 4399
+      },
+      {
+       "name": "https://flagcdn.com/w80/is.png",
+       "responseEnd": 4366
+      }
+     ]
+    },
+    {
+     "url": "http://127.0.0.1:4173/",
+     "ok": true,
+     "ready": 4239.799999237061,
+     "lcp": 4440,
+     "longtask": 1928,
+     "fcp": 4440,
+     "dcl": 4127,
+     "load": 4127,
+     "requests": 13,
+     "bytes_total": 2088723,
+     "bytes_by_type": {
+      "link": 38800,
+      "script": 1916110,
+      "xmlhttprequest": 126618,
+      "img": 6328,
+      "fetch": 0
+     },
+     "slowest": [
+      {
+       "name": "http://127.0.0.1:4173/cesium/Assets/approximateTerrainHeights.json",
+       "responseEnd": 4607
+      },
+      {
+       "name": "https://api.github.com/repos/Aisland-SJL/StarMap/releases/latest",
+       "responseEnd": 4577
+      },
+      {
+       "name": "http://127.0.0.1:4173/assets/ReleaseMarkdown-qm1cGjNa.js",
+       "responseEnd": 4473
+      },
+      {
+       "name": "http://127.0.0.1:4173/cesium/Assets/IAU2006_XYS/IAU2006_XYS_18.json",
+       "responseEnd": 4449
+      },
+      {
+       "name": "https://flagcdn.com/w80/is.png",
+       "responseEnd": 4423
+      }
+     ]
+    },
+    {
+     "url": "http://127.0.0.1:4173/",
+     "ok": true,
+     "ready": 4175.60000038147,
+     "lcp": 4364,
+     "longtask": 1817,
+     "fcp": 4364,
+     "dcl": 4062.9000005722046,
+     "load": 4063.9000005722046,
+     "requests": 13,
+     "bytes_total": 2088723,
+     "bytes_by_type": {
+      "link": 38800,
+      "script": 1916110,
+      "xmlhttprequest": 126618,
+      "img": 6328,
+      "fetch": 0
+     },
+     "slowest": [
+      {
+       "name": "https://flagcdn.com/w80/is.png",
+       "responseEnd": 4892
+      },
+      {
+       "name": "https://flagcdn.com/w80/fo.png",
+       "responseEnd": 4890
+      },
+      {
+       "name": "https://api.github.com/repos/Aisland-SJL/StarMap/releases/latest",
+       "responseEnd": 4691
+      },
+      {
+       "name": "http://127.0.0.1:4173/cesium/Assets/approximateTerrainHeights.json",
+       "responseEnd": 4527
+      },
+      {
+       "name": "http://127.0.0.1:4173/assets/ReleaseMarkdown-qm1cGjNa.js",
+       "responseEnd": 4407
+      }
+     ]
+    }
+   ]
+  }
+ }
+}

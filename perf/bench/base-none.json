@@ -1,0 +1,485 @@
+{
+ "started": "2026-10-24 11:27:26",
+ "finished": "2026-10-24 11:27:54",
+ "config": {
+  "runs": 10,
+  "profile": "none",
+  "cpu": 1,
+  "width": 1440,
+  "height": 900,
+  "ready": "!!document.querySelector('canvas') && !!document.querySelector('[aria-label=\"版本更新\"]')",
+  "type_check": null
+ },
+ "paired": false,
+ "results": {
+  "A": {
+   "url": "http://127.0.0.1:5173/",
+   "summary": {
+    "n": 10,
+    "n_ok": 10,
+    "ready": {
+     "p50": 431.6,
+     "p75": 442.4,
+     "p95": 477.7
+    },
+    "lcp": {
+     "p50": 602.0,
+     "p75": 643.0,
+     "p95": 721.2
+    },
+    "fcp": {
+     "p50": 602.0,
+     "p75": 643.0,
+     "p95": 721.2
+    },
+    "dcl": {
+     "p50": 282.2,
+     "p75": 295.9,
+     "p95": 319.2
+    },
+    "load": {
+     "p50": 284.2,
+     "p75": 298.1,
+     "p95": 321.3
+    },
+    "longtask": {
+     "p50": 2250.0,
+     "p75": 2314.8,
+     "p95": 2376.7
+    },
+    "requests": {
+     "p50": 217.0,
+     "p75": 227.0,
+     "p95": 228.0
+    },
+    "bytes_total": {
+     "p50": 19209236.0,
+     "p75": 19216722.0,
+     "p95": 19216722.0
+    }
+   },
+   "runs": [
+    {
+     "url": "http://127.0.0.1:5173/",
+     "ok": true,
+     "ready": 487.80000019073486,
+     "lcp": 768,
+     "longtask": 2336,
+     "fcp": 768,
+     "dcl": 319,
+     "load": 321.70000076293945,
+     "requests": 216,
+     "bytes_total": 19209236,
+     "bytes_by_type": {
+      "link": 31010,
+      "script": 17767695,
+      "xmlhttprequest": 1234719,
+      "img": 43955,
+      "fetch": 0,
+      "other": 130879
+     },
+     "slowest": [
+      {
+       "name": "http://ecn.t0.tiles.virtualearth.net/tiles/a0.jpeg?n=z&g=15646",
+       "responseEnd": 2338
+      },
+      {
+       "name": "http://ecn.t1.tiles.virtualearth.net/tiles/a1.jpeg?n=z&g=15646",
+       "responseEnd": 2338
+      },
+      {
+       "name": "http://127.0.0.1:5173/cesium/Workers/chunk-AYKR4VBR.js",
+       "responseEnd": 2249
+      },
+      {
+       "name": "http://127.0.0.1:5173/cesium/Workers/chunk-ZP7JMQV4.js",
+       "responseEnd": 2249
+      },
+      {
+       "name": "http://127.0.0.1:5173/cesium/Workers/chunk-J6BWOHUF.js",
+       "responseEnd": 2248
+      }
+     ]
+    },
+    {
+     "url": "http://127.0.0.1:5173/",
+     "ok": true,
+     "ready": 410.4000005722046,
+     "lcp": 604,
+     "longtask": 2323,
+     "fcp": 604,
+     "dcl": 266.20000076293945,
+     "load": 268.4000005722046,
+     "requests": 214,
+     "bytes_total": 19209236,
+     "bytes_by_type": {
+      "link": 31010,
+      "script": 17767695,
+      "xmlhttprequest": 1234719,
+      "img": 43955,
+      "fetch": 0,
+      "other": 130879
+     },
+     "slowest": [
+      {
+       "name": "http://127.0.0.1:5173/cesium/Assets/Images/bing_maps_credit.png",
+       "responseEnd": 2580
+      },
+      {
+       "name": "https://dev.virtualearth.net/REST/v1/Imagery/Metadata/Aerial?incl=ImageryProviders&key=AmXdbd8UeUJtaRSn7yVwyXgQlBBUqliLb",
+       "responseEnd": 2440
+      },
+      {
+       "name": "http://127.0.0.1:5173/cesium/Workers/chunk-MPZHGZU6.js",
+       "responseEnd": 2292
+      },
+      {
+       "name": "http://127.0.0.1:5173/cesium/Workers/chunk-V7VQKN6N.js",
+       "responseEnd": 2292
+      },
+      {
+       "name": "http://127.0.0.1:5173/cesium/Workers/chunk-ZP7JMQV4.js",
+       "responseEnd": 2292
+      }
+     ]
+    },
+    {
+     "url": "http://127.0.0.1:5173/",
+     "ok": true,
+     "ready": 444.70000076293945,
+     "lcp": 652,
+     "longtask": 2252,
+     "fcp": 652,
+     "dcl": 298.30000019073486,
+     "load": 300.70000076293945,
+     "requests": 218,
+     "bytes_total": 19209236,
+     "bytes_by_type": {
+      "link": 31010,
+      "script": 17767695,
+      "xmlhttprequest": 1234719,
+      "img": 43955,
+      "fetch": 0,
+      "other": 130879
+     },
+     "slowest": [
+      {
+       "name": "http://127.0.0.1:5173/cesium/Workers/chunk-ZP7JMQV4.js",
+       "responseEnd": 2108
+      },
+      {
+       "name": "http://127.0.0.1:5173/cesium/Workers/chunk-V7VQKN6N.js",
+       "responseEnd": 2108
+      },
+      {
+       "name": "http://127.0.0.1:5173/cesium/Workers/chunk-MPZHGZU6.js",
+       "responseEnd": 2108
+      },
+      {
+       "name": "http://127.0.0.1:5173/cesium/Workers/chunk-J6BWOHUF.js",
+       "responseEnd": 2108
+      },
+      {
+       "name": "http://127.0.0.1:5173/cesium/Workers/chunk-AYKR4VBR.js",
+       "responseEnd": 2108
+      }
+     ]
+    },
+    {
+     "url": "http://127.0.0.1:5173/",
+     "ok": true,
+     "ready": 435.30000019073486,
+     "lcp": 600,
+     "longtask": 2232,
+     "fcp": 600,
+     "dcl": 288.6000003814697,
+     "load": 290.1000003814697,
+     "requests": 228,
+     "bytes_total": 19216722,
+     "bytes_by_type": {
+      "link": 31010,
+      "script": 17770395,
+      "xmlhttprequest": 1234719,
+      "img": 43955,
+      "fetch": 0,
+      "other": 135665
+     },
+     "slowest": [
+      {
+       "name": "http://127.0.0.1:5173/cesium/Workers/chunk-ZP7JMQV4.js",
+       "responseEnd": 2127
+      },
+      {
+       "name": "http://127.0.0.1:5173/cesium/Workers/chunk-AYKR4VBR.js",
+       "responseEnd": 2127
+      },
+      {
+       "name": "http://127.0.0.1:5173/cesium/Workers/chunk-Q3PY526V.js",
+       "responseEnd": 2126
+      },
+      {
+       "name": "http://127.0.0.1:5173/cesium/Workers/chunk-MPZHGZU6.js",
+       "responseEnd": 2126
+      },
+      {
+       "name": "http://127.0.0.1:5173/cesium/Workers/chunk-J6BWOHUF.js",
+       "responseEnd": 2126
+      }
+     ]
+    },
+    {
+     "url": "http://127.0.0.1:5173/",
+     "ok": true,
+     "ready": 434.70000076293945,
+     "lcp": 596,
+     "longtask": 2290,
+     "fcp": 596,
+     "dcl": 287.5,
+     "load": 289.4000005722046,
+     "requests": 224,
+     "bytes_total": 19216722,
+     "bytes_by_type": {
+      "link": 31010,
+      "script": 17770395,
+      "xmlhttprequest": 1234719,
+      "img": 43955,
+      "fetch": 0,
+      "other": 135665
+     },
+     "slowest": [
+      {
+       "name": "http://127.0.0.1:5173/cesium/Workers/chunk-ZP7JMQV4.js",
+       "responseEnd": 2516
+      },
+      {
+       "name": "http://127.0.0.1:5173/cesium/Workers/chunk-AYKR4VBR.js",
+       "responseEnd": 2516
+      },
+      {
+       "name": "http://127.0.0.1:5173/cesium/Workers/chunk-MPZHGZU6.js",
+       "responseEnd": 2516
+      },
+      {
+       "name": "http://127.0.0.1:5173/cesium/Workers/chunk-J6BWOHUF.js",
+       "responseEnd": 2516
+      },
+      {
+       "name": "http://127.0.0.1:5173/cesium/Workers/chunk-Q3PY526V.js",
+       "responseEnd": 2516
+      }
+     ]
+    },
+    {
+     "url": "http://127.0.0.1:5173/",
+     "ok": true,
+     "ready": 428.3999996185303,
+     "lcp": 592,
+     "longtask": 2248,
+     "fcp": 592,
+     "dcl": 277,
+     "load": 279,
+     "requests": 214,
+     "bytes_total": 19209236,
+     "bytes_by_type": {
+      "script": 17767695,
+      "link": 31010,
+      "xmlhttprequest": 1234719,
+      "img": 43955,
+      "fetch": 0,
+      "other": 130879
+     },
+     "slowest": [
+      {
+       "name": "http://127.0.0.1:5173/cesium/Assets/Images/bing_maps_credit.png",
+       "responseEnd": 2332
+      },
+      {
+       "name": "http://127.0.0.1:5173/cesium/Workers/chunk-MPZHGZU6.js",
+       "responseEnd": 2319
+      },
+      {
+       "name": "http://127.0.0.1:5173/cesium/Workers/chunk-V7VQKN6N.js",
+       "responseEnd": 2319
+      },
+      {
+       "name": "http://127.0.0.1:5173/cesium/Workers/chunk-ZP7JMQV4.js",
+       "responseEnd": 2319
+      },
+      {
+       "name": "http://127.0.0.1:5173/cesium/Workers/chunk-AYKR4VBR.js",
+       "responseEnd": 2319
+      }
+     ]
+    },
+    {
+     "url": "http://127.0.0.1:5173/",
+     "ok": true,
+     "ready": 420.69999980926514,
+     "lcp": 616,
+     "longtask": 2410,
+     "fcp": 616,
+     "dcl": 276.0999994277954,
+     "load": 277.5999994277954,
+     "requests": 214,
+     "bytes_total": 19209236,
+     "bytes_by_type": {
+      "link": 31010,
+      "script": 17767695,
+      "xmlhttprequest": 1234719,
+      "img": 43955,
+      "fetch": 0,
+      "other": 130879
+     },
+     "slowest": [
+      {
+       "name": "http://127.0.0.1:5173/cesium/Assets/Images/bing_maps_credit.png",
+       "responseEnd": 2307
+      },
+      {
+       "name": "http://127.0.0.1:5173/cesium/Workers/chunk-V7VQKN6N.js",
+       "responseEnd": 2292
+      },
+      {
+       "name": "http://127.0.0.1:5173/cesium/Workers/chunk-MPZHGZU6.js",
+       "responseEnd": 2292
+      },
+      {
+       "name": "http://127.0.0.1:5173/cesium/Workers/chunk-ZP7JMQV4.js",
+       "responseEnd": 2292
+      },
+      {
+       "name": "http://127.0.0.1:5173/cesium/Workers/chunk-AYKR4VBR.js",
+       "responseEnd": 2292
+      }
+     ]
+    },
+    {
+     "url": "http://127.0.0.1:5173/",
+     "ok": true,
+     "ready": 422.30000019073486,
+     "lcp": 596,
+     "longtask": 2217,
+     "fcp": 596,
+     "dcl": 275.4000005722046,
+     "load": 277.19999980926514,
+     "requests": 228,
+     "bytes_total": 19216722,
+     "bytes_by_type": {
+      "link": 31010,
+      "script": 17770395,
+      "xmlhttprequest": 1234719,
+      "img": 43955,
+      "fetch": 0,
+      "other": 135665
+     },
+     "slowest": [
+      {
+       "name": "http://127.0.0.1:5173/cesium/Workers/chunk-ZP7JMQV4.js",
+       "responseEnd": 2176
+      },
+      {
+       "name": "http://127.0.0.1:5173/cesium/Workers/chunk-AYKR4VBR.js",
+       "responseEnd": 2175
+      },
+      {
+       "name": "http://127.0.0.1:5173/cesium/Workers/chunk-C6J67V5A.js",
+       "responseEnd": 2175
+      },
+      {
+       "name": "http://127.0.0.1:5173/cesium/Workers/chunk-J6BWOHUF.js",
+       "responseEnd": 2175
+      },
+      {
+       "name": "http://127.0.0.1:5173/cesium/Workers/chunk-MPZHGZU6.js",
+       "responseEnd": 2175
+      }
+     ]
+    },
+    {
+     "url": "http://127.0.0.1:5173/",
+     "ok": true,
+     "ready": 423.20000076293945,
+     "lcp": 588,
+     "longtask": 2039,
+     "fcp": 588,
+     "dcl": 276.6000003814697,
+     "load": 278.70000076293945,
+     "requests": 214,
+     "bytes_total": 19209236,
+     "bytes_by_type": {
+      "link": 31010,
+      "script": 17767695,
+      "xmlhttprequest": 1234719,
+      "img": 43955,
+      "fetch": 0,
+      "other": 130879
+     },
+     "slowest": [
+      {
+       "name": "http://127.0.0.1:5173/cesium/Workers/chunk-ZP7JMQV4.js",
+       "responseEnd": 2309
+      },
+      {
+       "name": "http://127.0.0.1:5173/cesium/Workers/chunk-AYKR4VBR.js",
+       "responseEnd": 2309
+      },
+      {
+       "name": "http://127.0.0.1:5173/cesium/Workers/chunk-J6BWOHUF.js",
+       "responseEnd": 2309
+      },
+      {
+       "name": "http://127.0.0.1:5173/cesium/Workers/chunk-MYP774IS.js",
+       "responseEnd": 2308
+      },
+      {
+       "name": "http://127.0.0.1:5173/cesium/Workers/chunk-MPZHGZU6.js",
+       "responseEnd": 2308
+      }
+     ]
+    },
+    {
+     "url": "http://127.0.0.1:5173/",
+     "ok": true,
+     "ready": 465.29999923706055,
+     "lcp": 664,
+     "longtask": 2142,
+     "fcp": 664,
+     "dcl": 319.3999996185303,
+     "load": 320.8999996185303,
+     "requests": 228,
+     "bytes_total": 19216722,
+     "bytes_by_type": {
+      "link": 31010,
+      "script": 17770395,
+      "xmlhttprequest": 1234719,
+      "img": 43955,
+      "fetch": 0,
+      "other": 135665
+     },
+     "slowest": [
+      {
+       "name": "http://127.0.0.1:5173/cesium/Workers/chunk-ZP7JMQV4.js",
+       "responseEnd": 2134
+      },
+      {
+       "name": "http://127.0.0.1:5173/cesium/Workers/chunk-J6BWOHUF.js",
+       "responseEnd": 2134
+      },
+      {
+       "name": "http://127.0.0.1:5173/cesium/Workers/chunk-AYKR4VBR.js",
+       "responseEnd": 2134
+      },
+      {
+       "name": "http://127.0.0.1:5173/cesium/Workers/chunk-MPZHGZU6.js",
+       "responseEnd": 2133
+      },
+      {
+       "name": "http://127.0.0.1:5173/cesium/Workers/chunk-Q3PY526V.js",
+       "responseEnd": 2132
+      }
+     ]
+    }
+   ]
+  }
+ }
+}

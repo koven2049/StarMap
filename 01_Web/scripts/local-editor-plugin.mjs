@@ -765,7 +765,10 @@ const serveUserMedia = async (request, response, pathname) => {
   response.statusCode = 200
   response.setHeader('content-type', userMediaContentTypes.get(path.extname(target).toLowerCase()) ?? 'application/octet-stream')
   response.setHeader('content-length', String(fileStats.size))
-  response.setHeader('cache-control', 'no-store')
+  // User media files are written once per id and never overwritten in place, so a
+  // short private cache window avoids re-downloading every thumbnail on each visit.
+  // Trade-off: a deleted photo can stay visible in cache until the window expires.
+  response.setHeader('cache-control', 'private, max-age=86400')
   if (request.method === 'HEAD') {
     response.end()
     return

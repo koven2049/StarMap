@@ -146,11 +146,11 @@ const maximumZoomDistance = 22_000_000
 // Browsers deliver trackpad pinch-zoom as wheel events with ctrlKey=true and
 // tiny pixel deltas (often ±1..5, versus ±100+ for a real wheel notch), so the
 // gesture feels far weaker than a mouse wheel through Cesium's shared zoom
-// path. The effect below amplifies only those pinch events. Raise or lower
-// this constant to tune the gesture strength.
+// path. The effect below drives camera.zoomIn/zoomOut directly from those
+// pinch events; Cesium ignores synthetic (untrusted) wheel events, so the
+// gesture cannot be amplified by re-dispatching. Raise or lower this constant
+// to tune the gesture strength.
 const trackpadPinchZoomBoost = 7
-
-type PinchAmplifiedWheelEvent = WheelEvent & { __starmapPinchZoom?: boolean }
 
 const cameraScaleStates: Record<
   CameraScale,
@@ -457,36 +457,38 @@ export function CesiumAtlasGlobe({
   const mapSourceLayers = useMemo(() => createMapSourceLayers(mapSource), [mapSource])
 
   useEffect(() => {
-    const amplifyTrackpadPinch = (event: WheelEvent) => {
-      const markedEvent = event as PinchAmplifiedWheelEvent
-      if (!event.ctrlKey || markedEvent.__starmapPinchZoom) return
+    const zoomFromTrackpadPinch = (event: WheelEvent) => {
+      if (!event.ctrlKey) return
       const target = event.target
       if (!(target instanceof Element) || !target.closest('.cesium-viewer')) return
 
-      // Swallow the original pinch before Cesium and the browser page zoom
-      // see it, then replay one amplified event on the same target.
+      // Swallow the raw pinch so Cesium's weak wheel-zoom path and the
+      // browser's page zoom never see it, then zoom the camera directly.
       event.preventDefault()
       event.stopImmediatePropagation()
-      const amplified = new WheelEvent('wheel', {
-        bubbles: event.bubbles,
-        cancelable: true,
-        clientX: event.clientX,
-        clientY: event.clientY,
-        ctrlKey: true,
-        deltaMode: event.deltaMode,
-        deltaX: event.deltaX,
-        deltaY: event.deltaY * trackpadPinchZoomBoost,
-        deltaZ: event.deltaZ,
-        screenX: event.screenX,
-        screenY: event.screenY,
-      })
-      Object.defineProperty(amplified, '__starmapPinchZoom', { value: true })
-      target.dispatchEvent(amplified)
+
+      const viewer = viewerRef.current?.cesiumElement
+      const scene = viewer?.scene
+      const controller = scene?.screenSpaceCameraController
+      if (!scene || !controller || !controller.enableInputs || !controller.enableZoom) return
+
+      const camera = scene.camera
+      const height = camera.positionCartographic.height
+      const fraction = (Math.abs(event.deltaY) * trackpadPinchZoomBoost)
+        / Math.max(1, scene.canvas.clientHeight)
+      const step = Math.min(height * fraction, height * 0.4)
+      if (event.deltaY < 0) {
+        const bounded = Math.min(step, height - controller.minimumZoomDistance)
+        if (bounded > 0) camera.zoomIn(bounded)
+      } else {
+        const bounded = Math.min(step, controller.maximumZoomDistance - height)
+        if (bounded > 0) camera.zoomOut(bounded)
+      }
     }
 
-    window.addEventListener('wheel', amplifyTrackpadPinch, { capture: true, passive: false })
+    window.addEventListener('wheel', zoomFromTrackpadPinch, { capture: true, passive: false })
     return () => {
-      window.removeEventListener('wheel', amplifyTrackpadPinch, true)
+      window.removeEventListener('wheel', zoomFromTrackpadPinch, true)
     }
   }, [])
 

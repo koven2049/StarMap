@@ -1,0 +1,485 @@
+{
+ "started": "2026-10-26 11:00:25",
+ "finished": "2026-10-26 11:01:19",
+ "config": {
+  "runs": 10,
+  "profile": "fast4g",
+  "cpu": 1,
+  "width": 1440,
+  "height": 900,
+  "ready": "!!document.querySelector('canvas') && !!document.querySelector('[aria-label=\"版本更新\"]')",
+  "type_check": null
+ },
+ "paired": false,
+ "results": {
+  "A": {
+   "url": "http://127.0.0.1:4173/",
+   "summary": {
+    "n": 10,
+    "n_ok": 10,
+    "ready": {
+     "p50": 3081.6,
+     "p75": 3088.8,
+     "p95": 3148.0
+    },
+    "lcp": {
+     "p50": 3238.0,
+     "p75": 3250.0,
+     "p95": 3440.4
+    },
+    "fcp": {
+     "p50": 3238.0,
+     "p75": 3250.0,
+     "p95": 3440.4
+    },
+    "dcl": {
+     "p50": 2970.1,
+     "p75": 2976.6,
+     "p95": 2981.1
+    },
+    "load": {
+     "p50": 2970.2,
+     "p75": 2976.6,
+     "p95": 2981.2
+    },
+    "longtask": {
+     "p50": 1580.5,
+     "p75": 1768.2,
+     "p95": 1989.5
+    },
+    "requests": {
+     "p50": 19.0,
+     "p75": 19.0,
+     "p95": 27.2
+    },
+    "bytes_total": {
+     "p50": 1585641.0,
+     "p75": 1585641.0,
+     "p95": 1631572.1
+    }
+   },
+   "runs": [
+    {
+     "url": "http://127.0.0.1:4173/",
+     "ok": true,
+     "ready": 3191.5,
+     "lcp": 3552,
+     "longtask": 1824,
+     "fcp": 3552,
+     "dcl": 2971.5,
+     "load": 2971.6000003814697,
+     "requests": 34,
+     "bytes_total": 1669152,
+     "bytes_by_type": {
+      "link": 38800,
+      "script": 1477684,
+      "xmlhttprequest": 125538,
+      "img": 6328,
+      "fetch": 0,
+      "other": 19981
+     },
+     "slowest": [
+      {
+       "name": "https://dev.virtualearth.net/REST/v1/Imagery/Metadata/Aerial?incl=ImageryProviders&key=AmXdbd8UeUJtaRSn7yVwyXgQlBBUqliLb",
+       "responseEnd": 5244
+      },
+      {
+       "name": "http://127.0.0.1:4173/cesium/Workers/chunk-LKQXJXNV.js",
+       "responseEnd": 5013
+      },
+      {
+       "name": "http://127.0.0.1:4173/cesium/Workers/chunk-5HZ2G332.js",
+       "responseEnd": 4922
+      },
+      {
+       "name": "http://127.0.0.1:4173/cesium/Workers/chunk-AZCCS55A.js",
+       "responseEnd": 4871
+      },
+      {
+       "name": "https://api.cesium.com/v1/assets/2/endpoint?access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJub25jZSI6Ii1mNTFfTWdiWU",
+       "responseEnd": 4650
+      }
+     ]
+    },
+    {
+     "url": "http://127.0.0.1:4173/",
+     "ok": true,
+     "ready": 3089.9000005722046,
+     "lcp": 3244,
+     "longtask": 1529,
+     "fcp": 3244,
+     "dcl": 2979.1000003814697,
+     "load": 2979.199999809265,
+     "requests": 19,
+     "bytes_total": 1585641,
+     "bytes_by_type": {
+      "link": 38800,
+      "script": 1394173,
+      "xmlhttprequest": 125538,
+      "img": 6328,
+      "fetch": 0,
+      "other": 19981
+     },
+     "slowest": [
+      {
+       "name": "https://dev.virtualearth.net/REST/v1/Imagery/Metadata/Aerial?incl=ImageryProviders&key=AmXdbd8UeUJtaRSn7yVwyXgQlBBUqliLb",
+       "responseEnd": 4766
+      },
+      {
+       "name": "https://api.cesium.com/v1/assets/2/endpoint?access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJub25jZSI6Ii1mNTFfTWdiWU",
+       "responseEnd": 4490
+      },
+      {
+       "name": "http://127.0.0.1:4173/cesium/Workers/createGeometry.js",
+       "responseEnd": 3890
+      },
+      {
+       "name": "http://127.0.0.1:4173/cesium/Workers/createGeometry.js",
+       "responseEnd": 3884
+      },
+      {
+       "name": "http://127.0.0.1:4173/cesium/Workers/createGeometry.js",
+       "responseEnd": 3884
+      }
+     ]
+    },
+    {
+     "url": "http://127.0.0.1:4173/",
+     "ok": true,
+     "ready": 3085.6000003814697,
+     "lcp": 3240,
+     "longtask": 1796,
+     "fcp": 3240,
+     "dcl": 2977.2000007629395,
+     "load": 2977.2000007629395,
+     "requests": 19,
+     "bytes_total": 1585641,
+     "bytes_by_type": {
+      "link": 38800,
+      "script": 1394173,
+      "xmlhttprequest": 125538,
+      "img": 6328,
+      "fetch": 0,
+      "other": 19981
+     },
+     "slowest": [
+      {
+       "name": "https://dev.virtualearth.net/REST/v1/Imagery/Metadata/Aerial?incl=ImageryProviders&key=AmXdbd8UeUJtaRSn7yVwyXgQlBBUqliLb",
+       "responseEnd": 4599
+      },
+      {
+       "name": "https://api.cesium.com/v1/assets/2/endpoint?access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJub25jZSI6Ii1mNTFfTWdiWU",
+       "responseEnd": 4035
+      },
+      {
+       "name": "http://127.0.0.1:4173/cesium/Workers/createGeometry.js",
+       "responseEnd": 3882
+      },
+      {
+       "name": "http://127.0.0.1:4173/cesium/Workers/createGeometry.js",
+       "responseEnd": 3876
+      },
+      {
+       "name": "http://127.0.0.1:4173/cesium/Workers/createGeometry.js",
+       "responseEnd": 3876
+      }
+     ]
+    },
+    {
+     "url": "http://127.0.0.1:4173/",
+     "ok": true,
+     "ready": 3084.6000003814697,
+     "lcp": 3304,
+     "longtask": 1685,
+     "fcp": 3304,
+     "dcl": 2974.699999809265,
+     "load": 2974.800000190735,
+     "requests": 19,
+     "bytes_total": 1585641,
+     "bytes_by_type": {
+      "link": 38800,
+      "script": 1394173,
+      "xmlhttprequest": 125538,
+      "img": 6328,
+      "fetch": 0,
+      "other": 19981
+     },
+     "slowest": [
+      {
+       "name": "https://dev.virtualearth.net/REST/v1/Imagery/Metadata/Aerial?incl=ImageryProviders&key=AmXdbd8UeUJtaRSn7yVwyXgQlBBUqliLb",
+       "responseEnd": 4722
+      },
+      {
+       "name": "https://api.cesium.com/v1/assets/2/endpoint?access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJub25jZSI6Ii1mNTFfTWdiWU",
+       "responseEnd": 4327
+      },
+      {
+       "name": "http://127.0.0.1:4173/cesium/Workers/createGeometry.js",
+       "responseEnd": 3959
+      },
+      {
+       "name": "http://127.0.0.1:4173/cesium/Workers/createGeometry.js",
+       "responseEnd": 3959
+      },
+      {
+       "name": "http://127.0.0.1:4173/cesium/Workers/createGeometry.js",
+       "responseEnd": 3951
+      }
+     ]
+    },
+    {
+     "url": "http://127.0.0.1:4173/",
+     "ok": true,
+     "ready": 3094.800000190735,
+     "lcp": 3252,
+     "longtask": 1560,
+     "fcp": 3252,
+     "dcl": 2982.800000190735,
+     "load": 2982.8999996185303,
+     "requests": 19,
+     "bytes_total": 1585641,
+     "bytes_by_type": {
+      "link": 38800,
+      "script": 1394173,
+      "xmlhttprequest": 125538,
+      "img": 6328,
+      "fetch": 0,
+      "other": 19981
+     },
+     "slowest": [
+      {
+       "name": "https://dev.virtualearth.net/REST/v1/Imagery/Metadata/Aerial?incl=ImageryProviders&key=AmXdbd8UeUJtaRSn7yVwyXgQlBBUqliLb",
+       "responseEnd": 4238
+      },
+      {
+       "name": "https://api.cesium.com/v1/assets/2/endpoint?access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJub25jZSI6Ii1mNTFfTWdiWU",
+       "responseEnd": 3939
+      },
+      {
+       "name": "http://127.0.0.1:4173/cesium/Workers/createGeometry.js",
+       "responseEnd": 3898
+      },
+      {
+       "name": "http://127.0.0.1:4173/cesium/Workers/createGeometry.js",
+       "responseEnd": 3898
+      },
+      {
+       "name": "http://127.0.0.1:4173/cesium/Workers/createGeometry.js",
+       "responseEnd": 3898
+      }
+     ]
+    },
+    {
+     "url": "http://127.0.0.1:4173/",
+     "ok": true,
+     "ready": 3077,
+     "lcp": 3232,
+     "longtask": 1504,
+     "fcp": 3232,
+     "dcl": 2968.699999809265,
+     "load": 2968.800000190735,
+     "requests": 18,
+     "bytes_total": 1585641,
+     "bytes_by_type": {
+      "link": 38800,
+      "script": 1394173,
+      "xmlhttprequest": 125538,
+      "img": 6328,
+      "fetch": 0,
+      "other": 19981
+     },
+     "slowest": [
+      {
+       "name": "https://api.cesium.com/v1/assets/2/endpoint?access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJub25jZSI6Ii1mNTFfTWdiWU",
+       "responseEnd": 4818
+      },
+      {
+       "name": "http://127.0.0.1:4173/cesium/Workers/createGeometry.js",
+       "responseEnd": 3874
+      },
+      {
+       "name": "http://127.0.0.1:4173/cesium/Workers/createGeometry.js",
+       "responseEnd": 3874
+      },
+      {
+       "name": "http://127.0.0.1:4173/cesium/Workers/createGeometry.js",
+       "responseEnd": 3874
+      },
+      {
+       "name": "http://127.0.0.1:4173/cesium/Workers/createGeometry.js",
+       "responseEnd": 3865
+      }
+     ]
+    },
+    {
+     "url": "http://127.0.0.1:4173/",
+     "ok": true,
+     "ready": 3078.6000003814697,
+     "lcp": 3236,
+     "longtask": 2125,
+     "fcp": 3236,
+     "dcl": 2966.1000003814697,
+     "load": 2966.199999809265,
+     "requests": 19,
+     "bytes_total": 1585641,
+     "bytes_by_type": {
+      "link": 38800,
+      "script": 1394173,
+      "xmlhttprequest": 125538,
+      "img": 6328,
+      "fetch": 0,
+      "other": 19981
+     },
+     "slowest": [
+      {
+       "name": "https://dev.virtualearth.net/REST/v1/Imagery/Metadata/Aerial?incl=ImageryProviders&key=AmXdbd8UeUJtaRSn7yVwyXgQlBBUqliLb",
+       "responseEnd": 4621
+      },
+      {
+       "name": "https://api.cesium.com/v1/assets/2/endpoint?access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJub25jZSI6Ii1mNTFfTWdiWU",
+       "responseEnd": 4143
+      },
+      {
+       "name": "http://127.0.0.1:4173/cesium/Workers/createGeometry.js",
+       "responseEnd": 3893
+      },
+      {
+       "name": "http://127.0.0.1:4173/cesium/Workers/createGeometry.js",
+       "responseEnd": 3893
+      },
+      {
+       "name": "http://127.0.0.1:4173/cesium/Workers/createGeometry.js",
+       "responseEnd": 3885
+      }
+     ]
+    },
+    {
+     "url": "http://127.0.0.1:4173/",
+     "ok": true,
+     "ready": 3020.199999809265,
+     "lcp": 3176,
+     "longtask": 1493,
+     "fcp": 3176,
+     "dcl": 2913.199999809265,
+     "load": 2913.300000190735,
+     "requests": 19,
+     "bytes_total": 1585641,
+     "bytes_by_type": {
+      "link": 38800,
+      "script": 1394173,
+      "xmlhttprequest": 125538,
+      "img": 6328,
+      "fetch": 0,
+      "other": 19981
+     },
+     "slowest": [
+      {
+       "name": "https://dev.virtualearth.net/REST/v1/Imagery/Metadata/Aerial?incl=ImageryProviders&key=AmXdbd8UeUJtaRSn7yVwyXgQlBBUqliLb",
+       "responseEnd": 4533
+      },
+      {
+       "name": "https://api.cesium.com/v1/assets/2/endpoint?access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJub25jZSI6Ii1mNTFfTWdiWU",
+       "responseEnd": 4061
+      },
+      {
+       "name": "http://127.0.0.1:4173/cesium/Workers/createGeometry.js",
+       "responseEnd": 3824
+      },
+      {
+       "name": "http://127.0.0.1:4173/cesium/Workers/createGeometry.js",
+       "responseEnd": 3816
+      },
+      {
+       "name": "http://127.0.0.1:4173/cesium/Workers/createGeometry.js",
+       "responseEnd": 3816
+      }
+     ]
+    },
+    {
+     "url": "http://127.0.0.1:4173/",
+     "ok": true,
+     "ready": 3063.800000190735,
+     "lcp": 3224,
+     "longtask": 1601,
+     "fcp": 3224,
+     "dcl": 2952.699999809265,
+     "load": 2952.699999809265,
+     "requests": 19,
+     "bytes_total": 1585641,
+     "bytes_by_type": {
+      "link": 38800,
+      "script": 1394173,
+      "xmlhttprequest": 125538,
+      "img": 6328,
+      "fetch": 0,
+      "other": 19981
+     },
+     "slowest": [
+      {
+       "name": "https://dev.virtualearth.net/REST/v1/Imagery/Metadata/Aerial?incl=ImageryProviders&key=AmXdbd8UeUJtaRSn7yVwyXgQlBBUqliLb",
+       "responseEnd": 4855
+      },
+      {
+       "name": "https://api.cesium.com/v1/assets/2/endpoint?access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJub25jZSI6Ii1mNTFfTWdiWU",
+       "responseEnd": 4399
+      },
+      {
+       "name": "http://127.0.0.1:4173/cesium/Workers/createGeometry.js",
+       "responseEnd": 3866
+      },
+      {
+       "name": "http://127.0.0.1:4173/cesium/Workers/createGeometry.js",
+       "responseEnd": 3866
+      },
+      {
+       "name": "http://127.0.0.1:4173/cesium/Workers/createGeometry.js",
+       "responseEnd": 3859
+      }
+     ]
+    },
+    {
+     "url": "http://127.0.0.1:4173/",
+     "ok": true,
+     "ready": 3070.2999992370605,
+     "lcp": 3228,
+     "longtask": 1394,
+     "fcp": 3228,
+     "dcl": 2960.199999809265,
+     "load": 2960.199999809265,
+     "requests": 18,
+     "bytes_total": 1585641,
+     "bytes_by_type": {
+      "link": 38800,
+      "script": 1394173,
+      "xmlhttprequest": 125538,
+      "img": 6328,
+      "fetch": 0,
+      "other": 19981
+     },
+     "slowest": [
+      {
+       "name": "http://127.0.0.1:4173/cesium/Workers/createGeometry.js",
+       "responseEnd": 3833
+      },
+      {
+       "name": "http://127.0.0.1:4173/cesium/Workers/createGeometry.js",
+       "responseEnd": 3832
+      },
+      {
+       "name": "http://127.0.0.1:4173/cesium/Workers/createGeometry.js",
+       "responseEnd": 3828
+      },
+      {
+       "name": "http://127.0.0.1:4173/cesium/Workers/createGeometry.js",
+       "responseEnd": 3828
+      },
+      {
+       "name": "https://api.cesium.com/v1/assets/2/endpoint?access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJub25jZSI6Ii1mNTFfTWdiWU",
+       "responseEnd": 3788
+      }
+     ]
+    }
+   ]
+  }
+ }
+}

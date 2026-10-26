@@ -143,6 +143,15 @@ type CameraScale = 'world' | 'country' | 'city' | 'droneGroup' | 'drone'
 
 const maximumZoomDistance = 22_000_000
 
+// Browsers deliver trackpad pinch-zoom as wheel events with ctrlKey=true and
+// tiny pixel deltas (often ±1..5, versus ±100+ for a real wheel notch), so the
+// gesture feels far weaker than a mouse wheel through Cesium's shared zoom
+// path. The effect below amplifies only those pinch events. Raise or lower
+// this constant to tune the gesture strength.
+const trackpadPinchZoomBoost = 7
+
+type PinchAmplifiedWheelEvent = WheelEvent & { __starmapPinchZoom?: boolean }
+
 const cameraScaleStates: Record<
   CameraScale,
   { rangeOrHeight: number; pitch: number; duration: number }
@@ -446,6 +455,40 @@ export function CesiumAtlasGlobe({
   const selectedCity = selectedCityId ? cityById[selectedCityId] : undefined
   const selectedAccent = selectedCountry?.accent ?? '#38bdf8'
   const mapSourceLayers = useMemo(() => createMapSourceLayers(mapSource), [mapSource])
+
+  useEffect(() => {
+    const amplifyTrackpadPinch = (event: WheelEvent) => {
+      const markedEvent = event as PinchAmplifiedWheelEvent
+      if (!event.ctrlKey || markedEvent.__starmapPinchZoom) return
+      const target = event.target
+      if (!(target instanceof Element) || !target.closest('.cesium-viewer')) return
+
+      // Swallow the original pinch before Cesium and the browser page zoom
+      // see it, then replay one amplified event on the same target.
+      event.preventDefault()
+      event.stopImmediatePropagation()
+      const amplified = new WheelEvent('wheel', {
+        bubbles: event.bubbles,
+        cancelable: true,
+        clientX: event.clientX,
+        clientY: event.clientY,
+        ctrlKey: true,
+        deltaMode: event.deltaMode,
+        deltaX: event.deltaX,
+        deltaY: event.deltaY * trackpadPinchZoomBoost,
+        deltaZ: event.deltaZ,
+        screenX: event.screenX,
+        screenY: event.screenY,
+      })
+      Object.defineProperty(amplified, '__starmapPinchZoom', { value: true })
+      target.dispatchEvent(amplified)
+    }
+
+    window.addEventListener('wheel', amplifyTrackpadPinch, { capture: true, passive: false })
+    return () => {
+      window.removeEventListener('wheel', amplifyTrackpadPinch, true)
+    }
+  }, [])
 
   const captureViewer = useCallback(
     (component: CesiumComponentRef<CesiumViewer> | null) => {

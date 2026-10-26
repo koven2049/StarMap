@@ -307,72 +307,7 @@ button {
 }
 
 .cesium-atlas-shell {
-  --cursor-x: 50%;
-  --cursor-y: 50%;
   transition: background-color 420ms ease;
-}
-
-.atlas-cursor-glow {
-  position: absolute;
-  z-index: 1;
-  inset: 0;
-  background:
-    radial-gradient(
-      circle 82px at var(--cursor-x) var(--cursor-y),
-      rgba(240, 249, 255, 0.3),
-      rgba(103, 232, 249, 0.15) 38%,
-      transparent 76%
-    ),
-    radial-gradient(
-      circle 240px at var(--cursor-x) var(--cursor-y),
-      rgba(52, 211, 153, 0.1),
-      rgba(56, 189, 248, 0.052) 44%,
-      transparent 72%
-    );
-  mix-blend-mode: screen;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 180ms ease;
-}
-
-.atlas-cursor-glow[data-active='true'] {
-  opacity: 1;
-}
-
-.atlas-cursor-trail {
-  position: absolute;
-  z-index: 2;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  mix-blend-mode: screen;
-  pointer-events: none;
-  contain: strict;
-}
-
-.theme-day .atlas-cursor-glow {
-  background:
-    radial-gradient(
-      circle 88px at var(--cursor-x) var(--cursor-y),
-      rgba(255, 255, 255, 0.2),
-      rgba(125, 211, 252, 0.07) 42%,
-      transparent 76%
-    ),
-    radial-gradient(
-      circle 220px at var(--cursor-x) var(--cursor-y),
-      rgba(255, 255, 255, 0.06),
-      transparent 72%
-    );
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .atlas-cursor-glow {
-    transition: none;
-  }
-
-  .atlas-cursor-trail {
-    display: none;
-  }
 }
 
 .theme-night .cesium-atlas-shell {

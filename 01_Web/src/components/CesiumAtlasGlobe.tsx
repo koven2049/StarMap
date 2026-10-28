@@ -150,7 +150,7 @@ const maximumZoomDistance = 22_000_000
 // pinch events; Cesium ignores synthetic (untrusted) wheel events, so the
 // gesture cannot be amplified by re-dispatching. Raise or lower this constant
 // to tune the gesture strength.
-const trackpadPinchZoomBoost = 7
+const trackpadPinchZoomBoost = 12
 
 const cameraScaleStates: Record<
   CameraScale,

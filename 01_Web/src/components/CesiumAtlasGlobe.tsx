@@ -453,7 +453,7 @@ export function CesiumAtlasGlobe({
   const [visibleRouteIds, setVisibleRouteIds] = useState<Set<string> | null>(null)
   const selectedCountry = selectedCountryId ? countryById[selectedCountryId] : undefined
   const selectedCity = selectedCityId ? cityById[selectedCityId] : undefined
-  const selectedAccent = selectedCountry?.accent ?? '#38bdf8'
+  const selectedAccent = selectedCountry?.accent ?? '#ec4899'
   const mapSourceLayers = useMemo(() => createMapSourceLayers(mapSource), [mapSource])
 
   useEffect(() => {
@@ -1243,7 +1243,7 @@ export function CesiumAtlasGlobe({
             show={showMapContent}
           />
         ) : null}
-        <Scene backgroundColor={Color.fromCssColorString(isNight ? '#010409' : '#dbeafe')} />
+        <Scene backgroundColor={Color.fromCssColorString(isNight ? '#010409' : '#ffe4f1')} />
         <CesiumGlobe
           baseColor={Color.fromCssColorString(isNight ? '#07111f' : '#cbd5e1')}
           dynamicAtmosphereLighting={isNight}
@@ -1251,7 +1251,7 @@ export function CesiumAtlasGlobe({
           show={showMapContent}
           vertexShadowDarkness={isNight ? 0.48 : 0.3}
         />
-        <CesiumSkyBox show={!isNight} />
+        <CesiumSkyBox show={false} />
         <SkyAtmosphere show={showMapContent} />
         <CesiumSun show={!isNight} />
         <ScreenSpaceCameraController
@@ -1284,12 +1284,12 @@ export function CesiumAtlasGlobe({
             (visibleRouteIds?.has(route.id) ?? true) &&
             (selectionMode !== 'city' || isCityRoute)
           const routeColor = Color.fromCssColorString(
-            isActive ? selectedAccent : '#bae6fd',
+            isActive ? selectedAccent : '#f9a8d4',
           ).withAlpha(
             isActive ? 0.94 : isMuted ? 0.1 : 0.42,
           )
           const routeOutlineColor = Color.fromCssColorString(
-            isActive ? '#f8fafc' : '#38bdf8',
+            isActive ? '#ffffff' : '#c084fc',
           ).withAlpha(
             isActive ? 0.58 : isMuted ? 0.04 : 0.22,
           )
@@ -1321,7 +1321,7 @@ export function CesiumAtlasGlobe({
           const isCountryCity =
             selectedCountryId !== undefined && city.countryId === selectedCountryId
           const country = city.countryId ? countryById[city.countryId] : undefined
-          const accent = country?.accent ?? '#38bdf8'
+          const accent = country?.accent ?? '#ec4899'
           const visitCount = journeyVisitCounts[city.id] ?? 1
           const isMuted =
             selectionMode !== 'overview' && !isSelected && !isCountryCity

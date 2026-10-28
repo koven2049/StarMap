@@ -46,7 +46,7 @@ type ImageryTuning = {
 }
 
 const imageryTuningDefaults: Record<ThemeMode, ImageryTuning> = {
-  day: { brightness: 1, contrast: 1, saturation: 1 },
+  day: { brightness: 1.06, contrast: 0.98, saturation: 1.08 },
   night: { brightness: 0.68, contrast: 1.08, saturation: 0.86 },
 }
 
@@ -132,7 +132,8 @@ function App() {
   const shouldShowDronePanel = Boolean(
     selectionMode === 'city' && selectedCityId && (selectedCityHasDroneMedia || localEditorAvailable),
   )
-  const activeTheme: ThemeMode = 'night'
+  const themeModes: readonly ThemeMode[] = ['day', 'night']
+  const activeTheme: ThemeMode = themeModes[0]
   const imageryTuning = {
     ...imageryTuningDefaults[activeTheme],
     ...imageryTuningByTheme[activeTheme],
@@ -352,7 +353,7 @@ function App() {
   }
 
   return (
-    <main className="theme-night relative h-[100dvh] overflow-hidden bg-[#010409] text-slate-950">
+    <main className="theme-day relative h-[100dvh] overflow-hidden bg-[#fff5fa] text-slate-950">
       <div className="app-background fixed inset-0 -z-10" />
       <div className="app-grid fixed inset-0 -z-10" />
       <div className="star-field fixed inset-0 -z-10" />

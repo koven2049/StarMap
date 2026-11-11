@@ -50,3 +50,6 @@ private_key.pem
 *.njsproj
 *.sln
 *.sw?
+
+# code-review-graph 生成的代码图谱（本地产物，不进 git）
+.code-review-graph/

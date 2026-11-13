@@ -431,9 +431,11 @@ rsync_app() {
   local extra=("$@")
   local excl="$SCRIPT_DIR/.rsync-exclude"
   [[ -f "$excl" ]] || { log_error ".rsync-exclude missing — refusing deploy."; exit 1; }
+  # extra（如 --delete）只作用于应用目录同步（带 exclude-from 守护）；
+  # 下两行是单文件/模板拷贝，不参与 delete 语义，也不允许裸 --delete。
   rsync -az ${extra[@]+"${extra[@]}"} --exclude-from="$excl" "$APP_DIR/" "$dest_root/"
-  rsync -az ${extra[@]+"${extra[@]}"} "$SCRIPT_DIR/manage.sh" "$dest_root/"
-  rsync -az ${extra[@]+"${extra[@]}"} "$SCRIPT_DIR/deploy/" "$dest_root/deploy/"
+  rsync -az "$SCRIPT_DIR/manage.sh" "$dest_root/"
+  rsync -az "$SCRIPT_DIR/deploy/" "$dest_root/deploy/"
 }
 
 cmd_deploy() {

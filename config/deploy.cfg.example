@@ -1,0 +1,4 @@
+# Copy to config/deploy.cfg (gitignored) and edit as needed.
+env = production
+ssh_target = admin@ts-macmini-m4
+deploy_path = /Users/admin/Services/starmap-preview

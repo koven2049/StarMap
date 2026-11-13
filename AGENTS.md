@@ -139,3 +139,36 @@ remove 天然不会误删未合并内容）；未合并或含未提交改动的�
   `06_private/`、`.env*`、`*token*`、`credentials*`、私人媒体或 `06_private`
   的任何内容；`.gitignore` 只是第二道保险。
 - 临时文件（`/tmp` 清单、调试截图、长输出）任务收尾即删。
+
+### 服务托管与部署身份（2026-11-13 契约）
+
+预览站（`vite preview`，127.0.0.1:4173）由 mini 系统 LaunchDaemon 托管
+（KeepAlive）。入口统一走仓根 `manage.sh`（仓内形态应用在 `01_Web/`；生产副本
+`~/Services/starmap-preview` = 01_Web 内容提升到根 + manage.sh，脚本自动识别
+两种布局）。
+
+- **实例身份 = 部署盖章**：`deploy` / `deploy-local` 成功后向目标副本写
+  `config/env = production`（唯一写入点）；开发检出永远无章 = Test（nohup +
+  pidfile，绝不托管给系统；`install-daemon` 无章拒绝）。
+- **生产部署管线**（跨机）：`./manage.sh deploy`——rsync `01_Web/`（排除
+  node_modules/dist/config/.env*，清单见 `.rsync-exclude`）+ manage.sh +
+  deploy/ → 写章 + VERSION → 远端 `npm install && npm run build` → 远端
+  `./manage.sh restart`。同机正门：`./manage.sh deploy-local`。
+- **launchd label 改名（已拍板，2026-11-13）**：
+  `com.starmap.preview` → `com.koven.starmap-preview`（新 plist 在 `deploy/`，
+  旧 label 的 plist 不入仓）。线上切换在部署阶段执行（mini，root）：
+
+  ```bash
+  sudo launchctl bootout system/com.starmap.preview
+  sudo install -o root -g wheel -m 644 \
+    /Users/admin/Services/starmap-preview/deploy/com.koven.starmap-preview.plist \
+    /Library/LaunchDaemons/com.koven.starmap-preview.plist
+  sudo launchctl bootstrap system /Library/LaunchDaemons/com.koven.starmap-preview.plist
+  sudo rm /Library/LaunchDaemons/com.starmap.preview.plist   # 可选：清旧文件
+  ```
+
+- 切换前旧 Daemon 若仍在保活，`stop` 杀掉实例会被旧 Daemon 拉起——manage.sh
+  会在此时如实提示并给出 bootout 指引（`LEGACY_LABEL`）。`com.koven.*` 命中
+  svc-ctl 免密白名单；托管判定是目录级的（label 在 system 域且监听进程命令行
+  含本目录 `node_modules/vite`）。vite preview 无 /health 端点，就绪判定 =
+  根路径 HTTP 应答。

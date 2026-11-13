@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>KeepAlive</key>
+	<true/>
+	<key>Label</key>
+	<string>com.koven.starmap-preview</string>
+	<key>ProgramArguments</key>
+	<array>
+		<string>/opt/homebrew/bin/node</string>
+		<string>/Users/admin/Services/starmap-preview/node_modules/vite/bin/vite.js</string>
+		<string>preview</string>
+		<string>--host</string>
+		<string>127.0.0.1</string>
+		<string>--port</string>
+		<string>4173</string>
+		<string>--strictPort</string>
+	</array>
+	<key>RunAtLoad</key>
+	<true/>
+	<key>StandardErrorPath</key>
+	<string>/Users/admin/Library/Logs/starmap-preview.err.log</string>
+	<key>StandardOutPath</key>
+	<string>/Users/admin/Library/Logs/starmap-preview.log</string>
+	<key>UserName</key>
+	<string>admin</string>
+	<key>WorkingDirectory</key>
+	<string>/Users/admin/Services/starmap-preview</string>
+</dict>
+</plist>

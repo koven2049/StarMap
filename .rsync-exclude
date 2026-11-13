@@ -1,0 +1,17 @@
+# rsync exclude rules for deployment (mirrors manage.sh deploy / deploy-local).
+# 部署只同步代码与配置清单；依赖、构建产物、密钥与本地数据一律不同步。
+# 生产端 node_modules/ 由 npm install 维护、dist/ 由 npm run build 重建、
+# config/env（部署盖章）只在目标副本写入——三者都排除，防 --delete 误删。
+/.git
+node_modules/
+dist/
+/config/
+/config/env
+/VERSION
+/run/
+.env*
+*.local
+.DS_Store
+.rsync-exclude
+AGENTS.md
+/public/media/user/

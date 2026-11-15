@@ -164,6 +164,11 @@ port_held_elsewhere() {
 # 免密服务控制：root 所有的 svc-ctl 包装（白名单 label，只开放 bootout/bootstrap/
 # kickstart 等动作）。缺失时相关操作降级为指引，不硬错、不假成功。
 svc_ctl() { sudo -n "$SVC_CTL" "$@"; }
+# v2 helper（disable/enable/status 透传）缺失时 is_disabled 恒 false——四态退化旧三态。
+plist_present() { [[ -f "$PLIST_DST" ]]; }
+is_disabled() {
+  [[ "$(svc_ctl status "$LAUNCHD_LABEL" 2>/dev/null | awk '$1=="disabled"{print $NF}')" == "true" ]]
+}
 
 # 系统域托管守卫（仅当本目录实例被 Daemon 托管时触发）：软停无意义——kill 后
 # KeepAlive 立即拉起。真停 = svc_ctl bootout；helper 未装时降级为准确指引。
@@ -171,10 +176,12 @@ svc_ctl() { sudo -n "$SVC_CTL" "$@"; }
 # 未装、无法免密真停（调用方必须拒绝软停，exit 1）。
 guard_prod_daemon_stop() {
   daemon_managed_here || return 1
+  # 方案二：意图先落 disabled DB（跨重启持久、bootstrap 被拒防误启）再摘除。
+  svc_ctl disable "system/$LAUNCHD_LABEL" 2>/dev/null || true
   if svc_ctl bootout "system/$LAUNCHD_LABEL" 2>/dev/null; then
     sleep 1
     [[ -n "$(confirmed_server_pids | head -n 1)" ]] && stop_pid "$(confirmed_server_pids | head -n 1)" || true
-    log_ok "已停用（svc_ctl bootout，语义 = 下线，重启不自启）。重新上线：./manage.sh start（走 bootstrap）。"
+    log_ok "已停用（disable + bootout，跨重启持久）。重新上线：./manage.sh start（enable + bootstrap）。"
     return 0
   fi
   log_warn "本目录实例由系统 LaunchDaemon 托管（KeepAlive），软停会被立即拉起。"
@@ -239,6 +246,7 @@ cmd_start() {
   # 有章 = 生产副本（此前被 bootout 停用）：走 bootstrap 回托管，而非 nohup。
   if is_prod_instance; then
     require_app
+    svc_ctl enable "system/$LAUNCHD_LABEL" 2>/dev/null || true
     if svc_ctl bootstrap "system/$LAUNCHD_LABEL" 2>/dev/null; then
       sleep 2
       if wait_ready; then
@@ -406,9 +414,20 @@ cmd_status() {
   printf '│ %-9s : %s\n' "App dir" "${APP_DIR#$SCRIPT_DIR/}"
   printf '│ %-9s : %s\n' "Stamp"   "$(is_prod_instance && echo 'production (deployed)' || echo 'none (Test)')"
   if system_managed; then printf '│ %-9s : %s\n' "托管" "LaunchDaemon (system) $LAUNCHD_LABEL"; fi
+  # 生命周期四态（方案二；互斥完备，巡检者按 Lifecycle 行豁免/判异常）。
+  local lifecycle="not installed"
+  if plist_present; then
+    if system_managed; then lifecycle="running"
+    elif is_disabled; then lifecycle="stopped (intentional)"
+    else lifecycle="down"
+    fi
+  fi
+  printf '│ %-9s : %s\n' "Lifecycle" "$lifecycle"
   echo "└──────────────────────────────────────────────────"
   [[ "$up" == "responding" ]] || failed=1
   [[ -f "$VITE_JS" ]] || { log_warn "node_modules missing — run ./manage.sh init"; failed=1; }
+  # 有意停用是合法状态不算故障 → exit 0（巡检豁免的机器依据）。
+  [[ "$lifecycle" == "stopped (intentional)" ]] && return 0
   [[ "$failed" -eq 0 ]] || return 1
   return 0
 }
